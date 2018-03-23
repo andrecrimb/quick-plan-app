@@ -11,37 +11,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MyanmarSangamMN.ttc">
-            <string>MyanmarSangamMN</string>
+        <array key="Ubuntu-M.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-R.ttf">
+            <string>Ubuntu</string>
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="quickPlan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="quickPlan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="a8u-Eh-fFK">
-                                <rect key="frame" x="56" y="172" width="262" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="6Hu-el-rc8"/>
-                                    <constraint firstAttribute="width" constant="262" id="Nty-jz-hYJ"/>
-                                    <constraint firstAttribute="width" secondItem="a8u-Eh-fFK" secondAttribute="height" multiplier="262:81" id="f56-bo-Xyn"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-Sc-lth" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
-                                <rect key="frame" x="83" y="299" width="209" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-4a-QZf">
+                                <rect key="frame" x="56.5" y="138" width="262" height="391"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="a8u-Eh-fFK">
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" id="6Hu-el-rc8"/>
+                                            <constraint firstAttribute="width" constant="262" id="Nty-jz-hYJ"/>
+                                            <constraint firstAttribute="width" secondItem="a8u-Eh-fFK" secondAttribute="height" multiplier="262:81" id="f56-bo-Xyn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="c4G-tV-YP7">
+                                        <rect key="frame" x="0.0" y="111" width="262" height="280"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="C8T-k1-6nz">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="120"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-Sc-lth" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="fpb-W4-ifp"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="kPs-N9-KDJ" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="262" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="61w-XH-M8K"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-Qd-rH1">
+                                                <rect key="frame" x="0.0" y="170" width="262" height="110"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAE-f0-7Cc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="45"/>
+                                                        <color key="backgroundColor" red="0.90978652238845825" green="0.57429099082946777" blue="0.42187169194221497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="wCE-sw-nFK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                                        <state key="normal" title="Login">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-a5-gA4">
+                                                        <rect key="frame" x="0.0" y="65" width="262" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="P8l-1D-zb9"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                                        <state key="normal" title="Create an account">
+                                                            <color key="titleColor" red="0.71366196870803833" green="0.71376627683639526" blue="0.71363919973373413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MNM-4a-QZf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nfA-px-yxW"/>
+                            <constraint firstItem="MNM-4a-QZf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sL2-sI-kGc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -49,8 +114,192 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HoW-Y9-wVn">
+            <objects>
+                <viewController id="x0l-OW-UbV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NQB-4V-N0p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gmq-Ka-PWK">
+                                <rect key="frame" x="56.5" y="89.5" width="262" height="488"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-hL-a3j">
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="83"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-cE-dy5">
+                                        <rect key="frame" x="0.0" y="113" width="262" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4H3-To-cCN">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
+                                                <state key="normal" title="Choose avatar">
+                                                    <color key="titleColor" red="0.19537433981895447" green="0.21276369690895081" blue="0.27614074945449829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-1X-ozF">
+                                                <rect key="frame" x="0.0" y="30" width="262" height="30"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
+                                                <state key="normal" title="Change background color">
+                                                    <color key="titleColor" red="0.19537433981895447" green="0.21276369690895081" blue="0.27614074945449829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="f12-7x-H4C">
+                                        <rect key="frame" x="0.0" y="203" width="262" height="285"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-uz-NeQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="190"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="8Sh-GD-btW" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="TU7-tg-O1s"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-0p-W4n" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="262" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="2X1-bD-mbG"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="JUY-Um-XiP" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="140" width="262" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="xU6-vz-I41"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-Ik-8Rc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="240" width="262" height="45"/>
+                                                <color key="backgroundColor" red="0.90978652240000002" green="0.57429099080000001" blue="0.42187169190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="3aj-wt-aOb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                                <state key="normal" title="Create account">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="2aC-GB-tU4"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gmq-Ka-PWK" firstAttribute="centerX" secondItem="NQB-4V-N0p" secondAttribute="centerX" id="Pj7-mM-f0P"/>
+                            <constraint firstItem="gmq-Ka-PWK" firstAttribute="centerY" secondItem="NQB-4V-N0p" secondAttribute="centerY" id="aZZ-at-zYj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SXF-Tg-HTS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" id="mFU-hJ-Mqp">
+                    <rect key="frame" x="0.0" y="0.0" width="262" height="391"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="full_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6l0-jb-OsN">
+                            <rect key="frame" x="0.0" y="0.0" width="262" height="81"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6l0-jb-OsN" secondAttribute="height" multiplier="262:81" id="Pf9-5D-yDh"/>
+                                <constraint firstAttribute="height" constant="81" id="pN4-0Z-pKY"/>
+                                <constraint firstAttribute="width" constant="262" id="vfE-f3-QTa"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-8P-mA5">
+                            <rect key="frame" x="0.0" y="111" width="262" height="280"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="txl-M5-SPY">
+                                    <rect key="frame" x="0.0" y="0.0" width="262" height="120"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="tsP-WT-oym" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="45T-V5-OaQ"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="k4G-mN-tds" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="70" width="262" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="xix-i0-oNI"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="password"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cWT-V4-1Ui">
+                                    <rect key="frame" x="0.0" y="170" width="262" height="110"/>
+                                    <subviews>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4t-NL-Y4k" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="45"/>
+                                            <color key="backgroundColor" red="0.90978652240000002" green="0.57429099080000001" blue="0.42187169190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="bZX-nU-hn1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                            <state key="normal" title="Login">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbk-a8-WSq">
+                                            <rect key="frame" x="0.0" y="65" width="262" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="MLp-37-a54"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                            <state key="normal" title="Create an account">
+                                                <color key="titleColor" red="0.71366196869999998" green="0.71376627680000004" blue="0.7136391997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="Nxl-Vh-hfr"/>
+                </stackView>
+            </objects>
+            <point key="canvasLocation" x="1058" y="135"/>
+        </scene>
     </scenes>
     <resources>
         <image name="full_logo" width="244" height="84"/>
+        <image name="user" width="83" height="83"/>
     </resources>
 </document>
