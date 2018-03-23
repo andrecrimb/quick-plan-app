@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  quickPlan
-//
-//  Created by André Rosa on 21/03/2018.
-//  Copyright © 2018 Andre Rosa. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

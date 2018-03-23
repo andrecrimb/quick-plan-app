@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F442062BBC4000C342E /* AppDelegate.swift */; };
-		543F5F472062BBC4000C342E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F462062BBC4000C342E /* ViewController.swift */; };
+		543F5F472062BBC4000C342E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F462062BBC4000C342E /* LoginVC.swift */; };
 		543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F482062BBC4000C342E /* Main.storyboard */; };
 		543F5F4C2062BBC4000C342E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F4B2062BBC4000C342E /* Assets.xcassets */; };
 		543F5F4F2062BBC4000C342E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F4D2062BBC4000C342E /* LaunchScreen.storyboard */; };
 		543F5F5A2062BBC4000C342E /* quickPlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F592062BBC4000C342E /* quickPlanTests.swift */; };
 		543F5F652062BBC4000C342E /* quickPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F642062BBC4000C342E /* quickPlanUITests.swift */; };
+		543F5F7720631F2B000C342E /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F7620631F2B000C342E /* LineTextField.swift */; };
+		543F5F7A20646F4B000C342E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F7920646F4B000C342E /* RoundedButton.swift */; };
+		543F5F8720647870000C342E /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F7E2064786F000C342E /* Ubuntu-R.ttf */; };
+		543F5F8820647870000C342E /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F7F2064786F000C342E /* Ubuntu-L.ttf */; };
+		543F5F8920647870000C342E /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F802064786F000C342E /* Ubuntu-M.ttf */; };
+		543F5F8A20647870000C342E /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F812064786F000C342E /* Ubuntu-B.ttf */; };
+		543F5F8B20647870000C342E /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F822064786F000C342E /* Ubuntu-C.ttf */; };
+		543F5F9020647CA1000C342E /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F8F20647CA1000C342E /* CustomImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +44,7 @@
 /* Begin PBXFileReference section */
 		543F5F412062BBC4000C342E /* quickPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quickPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		543F5F442062BBC4000C342E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		543F5F462062BBC4000C342E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		543F5F462062BBC4000C342E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		543F5F492062BBC4000C342E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		543F5F4B2062BBC4000C342E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543F5F4E2062BBC4000C342E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,14 @@
 		543F5F602062BBC4000C342E /* quickPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quickPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		543F5F642062BBC4000C342E /* quickPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quickPlanUITests.swift; sourceTree = "<group>"; };
 		543F5F662062BBC4000C342E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543F5F7620631F2B000C342E /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		543F5F7920646F4B000C342E /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		543F5F7E2064786F000C342E /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
+		543F5F7F2064786F000C342E /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		543F5F802064786F000C342E /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
+		543F5F812064786F000C342E /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		543F5F822064786F000C342E /* Ubuntu-C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-C.ttf"; sourceTree = "<group>"; };
+		543F5F8F20647CA1000C342E /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,7 @@
 		543F5F382062BBC4000C342E = {
 			isa = PBXGroup;
 			children = (
+				543F5F7B20647822000C342E /* Resources */,
 				543F5F432062BBC4000C342E /* quickPlan */,
 				543F5F582062BBC4000C342E /* quickPlanTests */,
 				543F5F632062BBC4000C342E /* quickPlanUITests */,
@@ -97,11 +114,11 @@
 		543F5F432062BBC4000C342E /* quickPlan */ = {
 			isa = PBXGroup;
 			children = (
+				543F5F7420631DAF000C342E /* Controllers */,
+				543F5F7320631DA8000C342E /* Views */,
+				543F5F7220631D97000C342E /* Models */,
 				543F5F442062BBC4000C342E /* AppDelegate.swift */,
-				543F5F462062BBC4000C342E /* ViewController.swift */,
-				543F5F482062BBC4000C342E /* Main.storyboard */,
 				543F5F4B2062BBC4000C342E /* Assets.xcassets */,
-				543F5F4D2062BBC4000C342E /* LaunchScreen.storyboard */,
 				543F5F502062BBC4000C342E /* Info.plist */,
 			);
 			path = quickPlan;
@@ -123,6 +140,69 @@
 				543F5F662062BBC4000C342E /* Info.plist */,
 			);
 			path = quickPlanUITests;
+			sourceTree = "<group>";
+		};
+		543F5F7220631D97000C342E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		543F5F7320631DA8000C342E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F7820641000000C342E /* Storyboards */,
+				543F5F7520631DB6000C342E /* Styles */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		543F5F7420631DAF000C342E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F462062BBC4000C342E /* LoginVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		543F5F7520631DB6000C342E /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F7620631F2B000C342E /* LineTextField.swift */,
+				543F5F7920646F4B000C342E /* RoundedButton.swift */,
+				543F5F8F20647CA1000C342E /* CustomImage.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		543F5F7820641000000C342E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F482062BBC4000C342E /* Main.storyboard */,
+				543F5F4D2062BBC4000C342E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		543F5F7B20647822000C342E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F7C20647856000C342E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		543F5F7C20647856000C342E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				543F5F812064786F000C342E /* Ubuntu-B.ttf */,
+				543F5F822064786F000C342E /* Ubuntu-C.ttf */,
+				543F5F7F2064786F000C342E /* Ubuntu-L.ttf */,
+				543F5F802064786F000C342E /* Ubuntu-M.ttf */,
+				543F5F7E2064786F000C342E /* Ubuntu-R.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543F5F8820647870000C342E /* Ubuntu-L.ttf in Resources */,
+				543F5F8920647870000C342E /* Ubuntu-M.ttf in Resources */,
+				543F5F8A20647870000C342E /* Ubuntu-B.ttf in Resources */,
+				543F5F8720647870000C342E /* Ubuntu-R.ttf in Resources */,
 				543F5F4F2062BBC4000C342E /* LaunchScreen.storyboard in Resources */,
+				543F5F8B20647870000C342E /* Ubuntu-C.ttf in Resources */,
 				543F5F4C2062BBC4000C342E /* Assets.xcassets in Resources */,
 				543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */,
 			);
@@ -259,8 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				543F5F472062BBC4000C342E /* ViewController.swift in Sources */,
+				543F5F472062BBC4000C342E /* LoginVC.swift in Sources */,
+				543F5F9020647CA1000C342E /* CustomImage.swift in Sources */,
+				543F5F7720631F2B000C342E /* LineTextField.swift in Sources */,
 				543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */,
+				543F5F7A20646F4B000C342E /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
