@@ -1,5 +1,5 @@
 //
-//  UserInfoView.swift
+//  CreateChannelVC.swift
 //  quickPlan
 //
 //  Created by André Rosa on 23/03/2018.
@@ -8,19 +8,18 @@
 
 import UIKit
 
-class ProfileVC: UIView {
+class CreateChannelVC: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-
+    
     private func commonInit(){
     }
-    
 }
