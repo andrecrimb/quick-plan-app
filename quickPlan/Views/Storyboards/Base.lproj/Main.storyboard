@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x0l-OW-UbV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -81,7 +81,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="0.0"/>
+                                                                <real key="value" value="7"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -125,9 +125,46 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gmq-Ka-PWK">
                                 <rect key="frame" x="56.5" y="89.5" width="262" height="488"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-hL-a3j">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sGr-ha-lnw">
                                         <rect key="frame" x="0.0" y="0.0" width="262" height="83"/>
-                                    </imageView>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Az-uo-omU" customClass="ShadowView" customModule="quickPlan" customModuleProvider="target">
+                                                <rect key="frame" x="89.5" y="0.0" width="83" height="83"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-hL-a3j" customClass="DesignableImage" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                                        <color key="backgroundColor" red="0.43018838599999998" green="1" blue="0.49748700439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="83" id="KYW-Ix-BZA"/>
+                                                            <constraint firstAttribute="width" constant="83" id="VaV-jX-oKp"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="customImage" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="rVW-hL-a3j" firstAttribute="leading" secondItem="2Az-uo-omU" secondAttribute="leading" id="7G1-TV-Xff"/>
+                                                    <constraint firstAttribute="height" constant="83" id="PpC-sp-k6i"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rVW-hL-a3j" secondAttribute="bottom" id="PpZ-Gj-NnZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rVW-hL-a3j" secondAttribute="trailing" id="Rk2-T2-SEt"/>
+                                                    <constraint firstItem="rVW-hL-a3j" firstAttribute="top" secondItem="2Az-uo-omU" secondAttribute="top" id="aaa-Xg-roz"/>
+                                                    <constraint firstAttribute="width" constant="83" id="wVF-Pw-FmQ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-cE-dy5">
                                         <rect key="frame" x="0.0" y="113" width="262" height="60"/>
                                         <subviews>
@@ -197,7 +234,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="0.0"/>
+                                                        <real key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -208,13 +245,30 @@
                                     <constraint firstAttribute="width" constant="262" id="2aC-GB-tU4"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="A6o-jm-JfI">
+                                <rect key="frame" x="16" y="5" width="343" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-vK-UYD">
+                                        <rect key="frame" x="283" y="0.0" width="60" height="60"/>
+                                        <state key="normal" image="close_btn"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gmq-Ka-PWK" firstAttribute="centerX" secondItem="NQB-4V-N0p" secondAttribute="centerX" id="Pj7-mM-f0P"/>
                             <constraint firstItem="gmq-Ka-PWK" firstAttribute="centerY" secondItem="NQB-4V-N0p" secondAttribute="centerY" id="aZZ-at-zYj"/>
+                            <constraint firstItem="SXF-Tg-HTS" firstAttribute="trailing" secondItem="A6o-jm-JfI" secondAttribute="trailing" constant="16" id="emM-g1-r55"/>
+                            <constraint firstItem="A6o-jm-JfI" firstAttribute="top" secondItem="NQB-4V-N0p" secondAttribute="top" constant="5" id="i8B-RC-IZJ"/>
+                            <constraint firstItem="A6o-jm-JfI" firstAttribute="leading" secondItem="SXF-Tg-HTS" secondAttribute="leading" constant="16" id="wgT-Br-AEF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SXF-Tg-HTS"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,6 +353,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close_btn" width="60" height="60"/>
         <image name="full_logo" width="244" height="84"/>
         <image name="user" width="83" height="83"/>
     </resources>

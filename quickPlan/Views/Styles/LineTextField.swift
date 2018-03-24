@@ -22,8 +22,6 @@ class LineTextField: UITextField {
     }
     
     func setupView(){
-        
-       
         attributedPlaceholder = NSAttributedString(string:placeholder != nil ? placeholder! : "", attributes:[NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)])
 
         
