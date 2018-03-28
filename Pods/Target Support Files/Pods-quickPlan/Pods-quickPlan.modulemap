@@ -1,0 +1,6 @@
+framework module Pods_quickPlan {
+  umbrella header "Pods-quickPlan-umbrella.h"
+
+  export *
+  module * { export * }
+}

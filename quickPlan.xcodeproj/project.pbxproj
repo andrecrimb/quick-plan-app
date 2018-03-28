@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D9DDAB78B4132CD46B6B8BC /* Pods_quickPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932BB0D13C5AEA4E3105207D /* Pods_quickPlan.framework */; };
 		543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F442062BBC4000C342E /* AppDelegate.swift */; };
 		543F5F472062BBC4000C342E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F462062BBC4000C342E /* LoginVC.swift */; };
 		543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F482062BBC4000C342E /* Main.storyboard */; };
@@ -27,6 +28,15 @@
 		543F5F9E2065CE22000C342E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F9D2065CE22000C342E /* BlurView.swift */; };
 		543F5FA02065D5CF000C342E /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F9F2065D5CF000C342E /* CreateChannelVC.xib */; };
 		543F5FA22065D64D000C342E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FA12065D64D000C342E /* CreateChannelVC.swift */; };
+		543F5FA72065DB16000C342E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FA62065DB16000C342E /* SWRevealViewController.m */; };
+		543F5FA92065DD5F000C342E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FA82065DD5F000C342E /* ChatVC.swift */; };
+		543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAA2065DD72000C342E /* ChannelVC.swift */; };
+		543F5FAD2069C46C000C342E /* DesignableNavigationCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAC2069C46C000C342E /* DesignableNavigationCtrl.swift */; };
+		543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAE2069C4EB000C342E /* CustomNavigationBar.swift */; };
+		5488C51B206B169100C2B0CD /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488C51A206B169100C2B0CD /* ChannelCell.swift */; };
+		5488C51D206B16B700C2B0CD /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488C51C206B16B700C2B0CD /* Channel.swift */; };
+		6F62A9FAE602750F57864AEC /* Pods_quickPlanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */; };
+		A9C75D14140C4CAE3CD2763A /* Pods_quickPlanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		543F5F412062BBC4000C342E /* quickPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quickPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		543F5F442062BBC4000C342E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543F5F462062BBC4000C342E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -73,6 +84,23 @@
 		543F5F9D2065CE22000C342E /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		543F5F9F2065D5CF000C342E /* CreateChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		543F5FA12065D64D000C342E /* CreateChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
+		543F5FA42065DB14000C342E /* quickPlan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "quickPlan-Bridging-Header.h"; sourceTree = "<group>"; };
+		543F5FA52065DB15000C342E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		543F5FA62065DB16000C342E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		543F5FA82065DD5F000C342E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		543F5FAA2065DD72000C342E /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		543F5FAC2069C46C000C342E /* DesignableNavigationCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableNavigationCtrl.swift; sourceTree = "<group>"; };
+		543F5FAE2069C4EB000C342E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		5488C51A206B169100C2B0CD /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		5488C51C206B16B700C2B0CD /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		5D85915D6A0DFA1EB70D22EA /* Pods-quickPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8F9508ECD730E1EBF49435 /* Pods-quickPlanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		932BB0D13C5AEA4E3105207D /* Pods_quickPlan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66150E1B16ECA8788292EF0 /* Pods-quickPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanTests/Pods-quickPlanTests.release.xcconfig"; sourceTree = "<group>"; };
+		ACAADC97FA83553353C76342 /* Pods-quickPlanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanTests/Pods-quickPlanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACFD83432F9CE689ED37064F /* Pods-quickPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlan.release.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan.release.xcconfig"; sourceTree = "<group>"; };
+		F57ABFF2148D51854DD4F5DF /* Pods-quickPlanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9DDAB78B4132CD46B6B8BC /* Pods_quickPlan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C75D14140C4CAE3CD2763A /* Pods_quickPlanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F62A9FAE602750F57864AEC /* Pods_quickPlanUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +139,8 @@
 				543F5F582062BBC4000C342E /* quickPlanTests */,
 				543F5F632062BBC4000C342E /* quickPlanUITests */,
 				543F5F422062BBC4000C342E /* Products */,
+				7190F639E2A8B5918F8ACA2E /* Pods */,
+				F8682324E8C91CBB618EADF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +157,7 @@
 		543F5F432062BBC4000C342E /* quickPlan */ = {
 			isa = PBXGroup;
 			children = (
+				543F5FA32065DAF8000C342E /* Supporting Files */,
 				543F5F7420631DAF000C342E /* Controllers */,
 				543F5F7320631DA8000C342E /* Views */,
 				543F5F7220631D97000C342E /* Models */,
@@ -155,6 +189,7 @@
 		543F5F7220631D97000C342E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5488C51C206B16B700C2B0CD /* Channel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +200,7 @@
 				543F5F972065C7A8000C342E /* Xibs */,
 				543F5F7820641000000C342E /* Storyboards */,
 				543F5F7520631DB6000C342E /* Styles */,
+				5488C51A206B169100C2B0CD /* ChannelCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +210,8 @@
 			children = (
 				543F5F9A2065C812000C342E /* Xibs */,
 				543F5F462062BBC4000C342E /* LoginVC.swift */,
+				543F5FA82065DD5F000C342E /* ChatVC.swift */,
+				543F5FAA2065DD72000C342E /* ChannelVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +223,8 @@
 				543F5F8F20647CA1000C342E /* ShadowView.swift */,
 				543F5F932065C304000C342E /* DesignableView.swift */,
 				543F5F9D2065CE22000C342E /* BlurView.swift */,
+				543F5FAC2069C46C000C342E /* DesignableNavigationCtrl.swift */,
+				543F5FAE2069C4EB000C342E /* CustomNavigationBar.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -236,6 +276,39 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		543F5FA32065DAF8000C342E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				543F5FA52065DB15000C342E /* SWRevealViewController.h */,
+				543F5FA62065DB16000C342E /* SWRevealViewController.m */,
+				543F5FA42065DB14000C342E /* quickPlan-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7190F639E2A8B5918F8ACA2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D85915D6A0DFA1EB70D22EA /* Pods-quickPlan.debug.xcconfig */,
+				ACFD83432F9CE689ED37064F /* Pods-quickPlan.release.xcconfig */,
+				ACAADC97FA83553353C76342 /* Pods-quickPlanTests.debug.xcconfig */,
+				A66150E1B16ECA8788292EF0 /* Pods-quickPlanTests.release.xcconfig */,
+				8A8F9508ECD730E1EBF49435 /* Pods-quickPlanUITests.debug.xcconfig */,
+				F57ABFF2148D51854DD4F5DF /* Pods-quickPlanUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8682324E8C91CBB618EADF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				932BB0D13C5AEA4E3105207D /* Pods_quickPlan.framework */,
+				072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */,
+				7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,9 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543F5F692062BBC4000C342E /* Build configuration list for PBXNativeTarget "quickPlan" */;
 			buildPhases = (
+				6578781FA4E2DD1DD6D3798D /* [CP] Check Pods Manifest.lock */,
 				543F5F3D2062BBC4000C342E /* Sources */,
 				543F5F3E2062BBC4000C342E /* Frameworks */,
 				543F5F3F2062BBC4000C342E /* Resources */,
+				5DEF98A5D29C7BAFC9BC78E6 /* [CP] Embed Pods Frameworks */,
+				AF6629ED029BD0AAE1E7A1D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,9 +336,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543F5F6C2062BBC4000C342E /* Build configuration list for PBXNativeTarget "quickPlanTests" */;
 			buildPhases = (
+				DFBDD7B711DC4E6CECA2F698 /* [CP] Check Pods Manifest.lock */,
 				543F5F512062BBC4000C342E /* Sources */,
 				543F5F522062BBC4000C342E /* Frameworks */,
 				543F5F532062BBC4000C342E /* Resources */,
+				3F98506D0C2FCED062754CFA /* [CP] Embed Pods Frameworks */,
+				9C83E0E9B2FAA2F3508F61C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,9 +357,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543F5F6F2062BBC4000C342E /* Build configuration list for PBXNativeTarget "quickPlanUITests" */;
 			buildPhases = (
+				6206FA0E0AE4DBB61B26F08F /* [CP] Check Pods Manifest.lock */,
 				543F5F5C2062BBC4000C342E /* Sources */,
 				543F5F5D2062BBC4000C342E /* Frameworks */,
 				543F5F5E2062BBC4000C342E /* Resources */,
+				415F6338BAEB4C09761CC5DA /* [CP] Embed Pods Frameworks */,
+				A44CB162E7AD8EF8FEA68E14 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,6 +386,7 @@
 				TargetAttributes = {
 					543F5F402062BBC4000C342E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					543F5F542062BBC4000C342E = {
@@ -372,17 +455,180 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3F98506D0C2FCED062754CFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlanTests/Pods-quickPlanTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		415F6338BAEB4C09761CC5DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DEF98A5D29C7BAFC9BC78E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6206FA0E0AE4DBB61B26F08F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quickPlanUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6578781FA4E2DD1DD6D3798D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quickPlan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C83E0E9B2FAA2F3508F61C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlanTests/Pods-quickPlanTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A44CB162E7AD8EF8FEA68E14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF6629ED029BD0AAE1E7A1D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBDD7B711DC4E6CECA2F698 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-quickPlanTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		543F5F3D2062BBC4000C342E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				543F5F472062BBC4000C342E /* LoginVC.swift in Sources */,
+				5488C51D206B16B700C2B0CD /* Channel.swift in Sources */,
 				543F5F9E2065CE22000C342E /* BlurView.swift in Sources */,
 				543F5F9020647CA1000C342E /* ShadowView.swift in Sources */,
+				543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */,
 				543F5F9C2065C8D6000C342E /* ProfileVC.swift in Sources */,
+				543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */,
+				543F5FA92065DD5F000C342E /* ChatVC.swift in Sources */,
 				543F5F942065C304000C342E /* DesignableView.swift in Sources */,
+				543F5FA72065DB16000C342E /* SWRevealViewController.m in Sources */,
+				543F5FAD2069C46C000C342E /* DesignableNavigationCtrl.swift in Sources */,
 				543F5F7720631F2B000C342E /* LineTextField.swift in Sources */,
+				5488C51B206B169100C2B0CD /* ChannelCell.swift in Sources */,
 				543F5FA22065D64D000C342E /* CreateChannelVC.swift in Sources */,
 				543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */,
 			);
@@ -548,14 +794,18 @@
 		};
 		543F5F6A2062BBC4000C342E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D85915D6A0DFA1EB70D22EA /* Pods-quickPlan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27EE7EUGC;
 				INFOPLIST_FILE = quickPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrerosa.quickPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "quickPlan/Supporting Files/quickPlan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -563,14 +813,17 @@
 		};
 		543F5F6B2062BBC4000C342E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACFD83432F9CE689ED37064F /* Pods-quickPlan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27EE7EUGC;
 				INFOPLIST_FILE = quickPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = andrerosa.quickPlan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "quickPlan/Supporting Files/quickPlan-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -578,6 +831,7 @@
 		};
 		543F5F6D2062BBC4000C342E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACAADC97FA83553353C76342 /* Pods-quickPlanTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -595,6 +849,7 @@
 		};
 		543F5F6E2062BBC4000C342E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66150E1B16ECA8788292EF0 /* Pods-quickPlanTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -612,6 +867,7 @@
 		};
 		543F5F702062BBC4000C342E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8F9508ECD730E1EBF49435 /* Pods-quickPlanUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,6 +884,7 @@
 		};
 		543F5F712062BBC4000C342E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57ABFF2148D51854DD4F5DF /* Pods-quickPlanUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gat-5d-NOz" customClass="ShadowView" customModule="quickPlan" customModuleProvider="target">
-                    <rect key="frame" x="28" y="184" width="319" height="299"/>
+                    <rect key="frame" x="28" y="144" width="319" height="299"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWa-OP-3uU" customClass="BlurView" customModule="quickPlan" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="319" height="299"/>
@@ -146,7 +146,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="gat-5d-NOz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DRP-e2-aKe"/>
+                <constraint firstItem="gat-5d-NOz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="DRP-e2-aKe"/>
                 <constraint firstItem="gat-5d-NOz" firstAttribute="width" secondItem="gat-5d-NOz" secondAttribute="height" multiplier="16:15" id="L8C-Xm-iTK"/>
                 <constraint firstItem="gat-5d-NOz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zPH-N6-eVX"/>
             </constraints>
