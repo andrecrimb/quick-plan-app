@@ -288,7 +288,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="5oL-bJ-149" kind="show" id="KL3-bG-WdF"/>
+                                                            <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VE-Xj-Uie"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-a5-gA4">
@@ -301,7 +301,7 @@
                                                             <color key="titleColor" red="0.71366196870803833" green="0.71376627683639526" blue="0.71363919973373413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="x0l-OW-UbV" kind="presentation" id="qhQ-jf-YHE"/>
+                                                            <action selector="createAccountBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NyN-Ja-ElK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -318,15 +318,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="QXo-Ly-Qyi"/>
+                        <segue destination="x0l-OW-UbV" kind="show" identifier="toCreateAccount" id="xbd-lP-wXY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="315"/>
         </scene>
-        <!--View Controller-->
+        <!--Create AccountVC-->
         <scene sceneID="HoW-Y9-wVn">
             <objects>
-                <viewController id="x0l-OW-UbV" sceneMemberID="viewController">
+                <viewController id="x0l-OW-UbV" customClass="CreateAccountVC" customModule="quickPlan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NQB-4V-N0p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -460,6 +464,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-vK-UYD">
                                         <rect key="frame" x="283" y="0.0" width="60" height="60"/>
                                         <state key="normal" image="close_btn"/>
+                                        <connections>
+                                            <action selector="dismissView" destination="x0l-OW-UbV" eventType="touchUpInside" id="mqZ-GA-CKM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
