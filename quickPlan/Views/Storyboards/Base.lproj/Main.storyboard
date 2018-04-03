@@ -254,7 +254,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="fpb-W4-ifp"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="kPs-N9-KDJ" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
@@ -264,7 +264,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="61w-XH-M8K"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
@@ -387,6 +387,9 @@
                                                 <state key="normal" title="Choose avatar">
                                                     <color key="titleColor" red="0.19537433981895447" green="0.21276369690895081" blue="0.27614074945449829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pickAvatarPressed:" destination="x0l-OW-UbV" eventType="touchUpInside" id="ofd-8e-AnK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvp-1X-ozF">
                                                 <rect key="frame" x="0.0" y="30" width="262" height="30"/>
@@ -394,6 +397,9 @@
                                                 <state key="normal" title="Change background color">
                                                     <color key="titleColor" red="0.19537433981895447" green="0.21276369690895081" blue="0.27614074945449829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pickBGColorPressed:" destination="x0l-OW-UbV" eventType="touchUpInside" id="FLL-q3-fZZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -410,7 +416,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="TU7-tg-O1s"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-0p-W4n" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
@@ -420,7 +426,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="2X1-bD-mbG"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="JUY-Um-XiP" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
@@ -430,7 +436,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="xU6-vz-I41"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
@@ -450,6 +456,9 @@
                                                         <real key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="createAccountPressed:" destination="x0l-OW-UbV" eventType="touchUpInside" id="ha5-16-plc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -486,6 +495,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="hLG-0p-W4n" id="a2y-eD-mTO"/>
+                        <outlet property="passwordTxt" destination="JUY-Um-XiP" id="THs-PE-TyQ"/>
+                        <outlet property="userImg" destination="rVW-hL-a3j" id="QYU-Qq-Rik"/>
+                        <outlet property="usernameTxt" destination="8Sh-GD-btW" id="Avi-3c-ixs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" id="mFU-hJ-Mqp">

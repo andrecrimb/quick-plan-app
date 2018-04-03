@@ -15,8 +15,9 @@ struct Constants {
     // MARK: URLs
     
     struct Urls {
-        static let BaseUrl = "https://oigru.herokuapp.com/v1/"
+        static let BaseUrl = "https://quickplan-api.herokuapp.com/v1/"
         static let UrlRegister = "\(Urls.BaseUrl)account/register"
+        static let UrlLogin = "\(Urls.BaseUrl)account/login"
     }
     
     // MARK: Segues
@@ -33,6 +34,13 @@ struct Constants {
         static let UserEmail = "userEmail"
     }
     
+    // MARK: Headers
+    
+    struct Headers {
+        static let AppJson = [
+            "Content-Type": "application/json"
+        ]
+    }
     
     
 }
