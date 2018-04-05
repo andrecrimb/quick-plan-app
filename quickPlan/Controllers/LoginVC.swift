@@ -6,7 +6,8 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
      
     }
-
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)

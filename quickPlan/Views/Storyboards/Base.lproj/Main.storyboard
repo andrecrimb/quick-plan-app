@@ -36,9 +36,11 @@
                     <connections>
                         <segue destination="ZTc-3m-isG" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="IR4-8D-9Gr"/>
                         <segue destination="WJU-hR-09J" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="i2e-xa-Ind"/>
+                        <segue destination="up5-Bq-taB" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="lrw-gy-QRA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yH-bH-zQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="up5-Bq-taB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2382" y="-48"/>
         </scene>
@@ -500,9 +502,12 @@
                         <outlet property="passwordTxt" destination="JUY-Um-XiP" id="THs-PE-TyQ"/>
                         <outlet property="userImg" destination="rVW-hL-a3j" id="QYU-Qq-Rik"/>
                         <outlet property="usernameTxt" destination="8Sh-GD-btW" id="Avi-3c-ixs"/>
+                        <segue destination="GcG-pt-SzT" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="D8r-BO-fMG"/>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="cPb-DR-ZRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GcG-pt-SzT" userLabel="Exit" sceneMemberID="exit"/>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" id="mFU-hJ-Mqp">
                     <rect key="frame" x="0.0" y="0.0" width="262" height="391"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -617,4 +622,7 @@
         <image name="menu_icon" width="36" height="30"/>
         <image name="user" width="83" height="83"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cPb-DR-ZRs"/>
+    </inferredMetricsTieBreakers>
 </document>

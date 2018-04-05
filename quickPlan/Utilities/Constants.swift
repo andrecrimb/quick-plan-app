@@ -15,9 +15,10 @@ struct Constants {
     // MARK: URLs
     
     struct Urls {
-        static let BaseUrl = "https://quickplan-api.herokuapp.com/v1/"
-        static let UrlRegister = "\(Urls.BaseUrl)account/register"
-        static let UrlLogin = "\(Urls.BaseUrl)account/login"
+        static let Base = "https://quickplan-api.herokuapp.com/v1/"
+        static let Register = "\(Urls.Base)account/register"
+        static let Login = "\(Urls.Base)account/login"
+        static let UserAdd = "\(Urls.Base)user/add"
     }
     
     // MARK: Segues
@@ -25,6 +26,7 @@ struct Constants {
         static let ToLogin = "toLogin"
         static let ToCreateAccount = "toCreateAccount"
         static let ToChannels = "toChannels"
+        static let Unwind = "unwindToLogin"
     }
     
     // MARK: User Defaults

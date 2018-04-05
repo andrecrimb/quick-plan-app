@@ -11,10 +11,15 @@ import Foundation
 
 class CreateAccountVC: UIViewController {
 
+    // MARK: Outlets
     @IBOutlet weak var usernameTxt: LineTextField!
     @IBOutlet weak var emailTxt: LineTextField!
     @IBOutlet weak var passwordTxt: LineTextField!
     @IBOutlet weak var userImg: UIImage!
+    
+    // MARK: Variables
+    var avatarName = "user"
+    var avatarColor = "[0.5,0.5,0.5,1]"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +36,23 @@ class CreateAccountVC: UIViewController {
             print("Invalid passworf")
             return
         }
+        guard let name = usernameTxt.text, usernameTxt.text != "" else {
+            print("Invalid Name")
+            return
+        }
         
         AuthService.instance.registerUser(email: email, password: pass) { (success) in
             if success {
                 print("ANDRE: Registred user!")
                 AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
                     if success{
-                        print("ANDRE: Logged in user! \(AuthService.instance.authToken)")
+                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
+                            if success{
+                                print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                                self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
+                            }
+                            
+                        })
                     }
                 })
             }
@@ -54,7 +69,7 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func dismissView(){
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: Constants.Segues.Unwind, sender: nil)
     }
 
 }
