@@ -15,19 +15,37 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var usernameTxt: LineTextField!
     @IBOutlet weak var emailTxt: LineTextField!
     @IBOutlet weak var passwordTxt: LineTextField!
-    @IBOutlet weak var userImg: UIImage!
+    @IBOutlet weak var userImg: UIImageView!
+    
+    @IBOutlet weak var closeViewBtn: UIButton!
+    @IBOutlet weak var chooseAvatarBtn: UIButton!
+    @IBOutlet weak var chooseBackgroundBtn: UIButton!
+    @IBOutlet weak var createAccountBtn: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // MARK: Variables
     var avatarName = "user"
     var avatarColor = "[0.5,0.5,0.5,1]"
+    var bgColor: UIColor?
+    var textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != ""{
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+            if bgColor == nil {
+                userImg.backgroundColor = UIColor.lightGray
+            }
+        }
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
+        loading(isLoading: true)
         guard let email = emailTxt.text, emailTxt.text != "" else {
             print("Invalid email)")
             return
@@ -48,8 +66,9 @@ class CreateAccountVC: UIViewController {
                     if success{
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             if success{
-                                print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                                self.loading(isLoading: false)
                                 self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
+                                NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
                             }
                             
                         })
@@ -59,12 +78,83 @@ class CreateAccountVC: UIViewController {
         }
     }
     
-    @IBAction func pickBGColorPressed(_ sender: Any) {
+    // MARK: Subscribing to keybord notifications to scroll the view
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        subscribeToKeyboardNotifications()
+    }
+    
+    // MARK: Unsubscribing to keybord notifications
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        unsubscribeFromKeyboardNotifications()
+    }
+    
+    // MARK: Method that subscribe and unsubscribe to keyboard notifications
+    func subscribeToKeyboardNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    // MARK: Method that get keyboard height and set contentInset of the scrollview
+    @objc func keyboardWillShow(_ notification: Notification){
+        view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    // MARK: Method that set the scrollview contentInset to zero
+    @objc func keyboardWillHide(_ notification: Notification){
+        view.frame.origin.y = 0
+    }
+    
+    // MARK: Setup All view adjusts before render
+    func setupView(){
+        createAccountBtn.setTitleColor(UIColor.clear, for: .disabled)
+        usernameTxt.delegate = textFieldDelegate
+        passwordTxt.delegate = textFieldDelegate
+        emailTxt.delegate = textFieldDelegate
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    // MARK: Dismiss keyboard when user tap anywhere
+    @objc func handleTap(){
+        view.endEditing(true)
+    }
+    
+    // MARK: If is loading disable actions and fields and start spinner
+    func loading(isLoading: Bool){
+        usernameTxt.isEnabled = !isLoading
+        emailTxt.isEnabled = !isLoading
+        passwordTxt.isEnabled = !isLoading
+        chooseAvatarBtn.isEnabled = !isLoading
+        chooseBackgroundBtn.isEnabled = !isLoading
+        closeViewBtn.isEnabled = !isLoading
+        createAccountBtn.isEnabled = !isLoading
+        if isLoading {
+            spinner.startAnimating()
+        } else {
+            spinner.stopAnimating()
+        }
+    }
+    
+    // MARK: Deals with avatar random color
+    @IBAction func pickBGColorPressed(_ sender: Any) {
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
+        
+        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        
+        UIView.animate(withDuration: 0.2){
+            self.userImg.backgroundColor = self.bgColor
+        }
+
     }
     
     @IBAction func pickAvatarPressed(_ sender: Any) {
-        
+           performSegue(withIdentifier: Constants.Segues.toAvatarPicker, sender: nil)
     }
     
     

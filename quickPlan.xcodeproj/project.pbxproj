@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D9DDAB78B4132CD46B6B8BC /* Pods_quickPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932BB0D13C5AEA4E3105207D /* Pods_quickPlan.framework */; };
+		541786C12078ECB100011004 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C02078ECB100011004 /* AvatarCell.swift */; };
+		541786C3207912BF00011004 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C2207912BF00011004 /* TextFieldDelegate.swift */; };
+		541786C52079140800011004 /* ViewKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C42079140800011004 /* ViewKeyboardHandler.swift */; };
 		543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F442062BBC4000C342E /* AppDelegate.swift */; };
 		543F5F472062BBC4000C342E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F462062BBC4000C342E /* LoginVC.swift */; };
 		543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F482062BBC4000C342E /* Main.storyboard */; };
@@ -39,6 +42,7 @@
 		54AC2ED7206C7BA600E71432 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC2ED6206C7BA600E71432 /* CreateAccountVC.swift */; };
 		54AC2EDA206C823800E71432 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC2ED9206C823800E71432 /* AuthService.swift */; };
 		54BB981C2075A482004D8706 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BB981B2075A482004D8706 /* UserDataService.swift */; };
+		54D834832077CA1B0043CC2B /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D834822077CA1B0043CC2B /* AvatarPickerVC.swift */; };
 		6F62A9FAE602750F57864AEC /* Pods_quickPlanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */; };
 		A9C75D14140C4CAE3CD2763A /* Pods_quickPlanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		541786C02078ECB100011004 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		541786C2207912BF00011004 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		541786C42079140800011004 /* ViewKeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewKeyboardHandler.swift; sourceTree = "<group>"; };
 		543F5F412062BBC4000C342E /* quickPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quickPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		543F5F442062BBC4000C342E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543F5F462062BBC4000C342E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -101,6 +108,7 @@
 		54AC2ED6206C7BA600E71432 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		54AC2ED9206C823800E71432 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		54BB981B2075A482004D8706 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		54D834822077CA1B0043CC2B /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5D85915D6A0DFA1EB70D22EA /* Pods-quickPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8F9508ECD730E1EBF49435 /* Pods-quickPlanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 				543F5F7820641000000C342E /* Storyboards */,
 				543F5F7520631DB6000C342E /* Styles */,
 				5488C51A206B169100C2B0CD /* ChannelCell.swift */,
+				541786C02078ECB100011004 /* AvatarCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 				543F5FA82065DD5F000C342E /* ChatVC.swift */,
 				543F5FAA2065DD72000C342E /* ChannelVC.swift */,
 				54AC2ED6206C7BA600E71432 /* CreateAccountVC.swift */,
+				54D834822077CA1B0043CC2B /* AvatarPickerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				54AC2ED4206C783700E71432 /* Constants.swift */,
+				541786C2207912BF00011004 /* TextFieldDelegate.swift */,
+				541786C42079140800011004 /* ViewKeyboardHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -644,12 +656,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541786C52079140800011004 /* ViewKeyboardHandler.swift in Sources */,
 				543F5F472062BBC4000C342E /* LoginVC.swift in Sources */,
 				5488C51D206B16B700C2B0CD /* Channel.swift in Sources */,
 				543F5F9E2065CE22000C342E /* BlurView.swift in Sources */,
 				54AC2EDA206C823800E71432 /* AuthService.swift in Sources */,
+				541786C3207912BF00011004 /* TextFieldDelegate.swift in Sources */,
 				54BB981C2075A482004D8706 /* UserDataService.swift in Sources */,
 				543F5F9020647CA1000C342E /* ShadowView.swift in Sources */,
+				54D834832077CA1B0043CC2B /* AvatarPickerVC.swift in Sources */,
 				543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */,
 				543F5F9C2065C8D6000C342E /* ProfileVC.swift in Sources */,
 				543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */,
@@ -659,6 +674,7 @@
 				543F5FA72065DB16000C342E /* SWRevealViewController.m in Sources */,
 				543F5FAD2069C46C000C342E /* DesignableNavigationCtrl.swift in Sources */,
 				543F5F7720631F2B000C342E /* LineTextField.swift in Sources */,
+				541786C12078ECB100011004 /* AvatarCell.swift in Sources */,
 				54AC2ED7206C7BA600E71432 /* CreateAccountVC.swift in Sources */,
 				5488C51B206B169100C2B0CD /* ChannelCell.swift in Sources */,
 				543F5FA22065D64D000C342E /* CreateChannelVC.swift in Sources */,

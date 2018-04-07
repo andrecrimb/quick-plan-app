@@ -12,8 +12,18 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 struct Constants {
     
-    // MARK: URLs
+    // MARK: Reusable Identifiers
+    struct Identifiers{
+        static let AvatarCell = "avatarCell"
+    }
     
+    // MARK: Notifications
+    struct Notifications {
+        static let NotifUserDataDidChange = Notification.Name("notifuserDataChanged")
+    }
+    
+    
+    // MARK: URLs
     struct Urls {
         static let Base = "https://quickplan-api.herokuapp.com/v1/"
         static let Register = "\(Urls.Base)account/register"
@@ -27,6 +37,7 @@ struct Constants {
         static let ToCreateAccount = "toCreateAccount"
         static let ToChannels = "toChannels"
         static let Unwind = "unwindToLogin"
+        static let toAvatarPicker = "toAvatarPicker"
     }
     
     // MARK: User Defaults
@@ -37,7 +48,6 @@ struct Constants {
     }
     
     // MARK: Headers
-    
     struct Headers {
         static let AppJson = [
             "Content-Type": "application/json"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhe-GK-LIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578.4000000000001" y="-422.33883058470769"/>
+            <point key="canvasLocation" x="6396" y="-422.33883058470769"/>
         </scene>
         <!--nodeJS-->
         <scene sceneID="3pa-5d-z5A">
@@ -274,25 +274,40 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-Qd-rH1">
                                                 <rect key="frame" x="0.0" y="170" width="262" height="110"/>
                                                 <subviews>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAE-f0-7Cc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eC6-ci-pc2">
                                                         <rect key="frame" x="0.0" y="0.0" width="262" height="45"/>
-                                                        <color key="backgroundColor" red="0.90978652238845825" green="0.57429099082946777" blue="0.42187169194221497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <subviews>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAE-f0-7Cc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                                <rect key="frame" x="-0.5" y="-0.5" width="262" height="45"/>
+                                                                <color key="backgroundColor" red="0.90978652238845825" green="0.57429099082946777" blue="0.42187169194221497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                                                <state key="normal" title="Login">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="7"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VE-Xj-Uie"/>
+                                                                </connections>
+                                                            </button>
+                                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="D5L-ew-c7O">
+                                                                <rect key="frame" x="120.5" y="12" width="20" height="20"/>
+                                                            </activityIndicatorView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="wCE-sw-nFK"/>
+                                                            <constraint firstAttribute="trailing" secondItem="mAE-f0-7Cc" secondAttribute="trailing" id="6Cy-G5-tJf"/>
+                                                            <constraint firstItem="D5L-ew-c7O" firstAttribute="centerY" secondItem="eC6-ci-pc2" secondAttribute="centerY" id="7r0-iH-hQ1"/>
+                                                            <constraint firstItem="mAE-f0-7Cc" firstAttribute="top" secondItem="eC6-ci-pc2" secondAttribute="top" id="ALZ-Lu-e4z"/>
+                                                            <constraint firstItem="mAE-f0-7Cc" firstAttribute="leading" secondItem="eC6-ci-pc2" secondAttribute="leading" id="Ka7-U5-dVk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mAE-f0-7Cc" secondAttribute="bottom" id="WJf-as-rwE"/>
+                                                            <constraint firstAttribute="height" constant="45" id="YPo-1j-Uom"/>
+                                                            <constraint firstItem="D5L-ew-c7O" firstAttribute="centerX" secondItem="eC6-ci-pc2" secondAttribute="centerX" id="bNP-CH-OAI"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                        <state key="normal" title="Login">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="7"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VE-Xj-Uie"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-a5-gA4">
                                                         <rect key="frame" x="0.0" y="65" width="262" height="45"/>
                                                         <constraints>
@@ -321,13 +336,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="createAccountBtn" destination="BZt-a5-gA4" id="EIf-j3-Q6s"/>
+                        <outlet property="emailTxt" destination="VUc-Sc-lth" id="C5p-wA-Wbw"/>
+                        <outlet property="loginBtn" destination="mAE-f0-7Cc" id="q39-sH-yNh"/>
+                        <outlet property="passwordTxt" destination="kPs-N9-KDJ" id="ixs-D0-C7I"/>
+                        <outlet property="spinner" destination="D5L-ew-c7O" id="NGF-ue-Lxc"/>
                         <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="QXo-Ly-Qyi"/>
                         <segue destination="x0l-OW-UbV" kind="show" identifier="toCreateAccount" id="xbd-lP-wXY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="315"/>
+            <point key="canvasLocation" x="282" y="342"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="HoW-Y9-wVn">
@@ -348,7 +368,6 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="rVW-hL-a3j" customClass="DesignableImage" customModule="quickPlan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
-                                                        <color key="backgroundColor" red="0.43018838599999998" green="1" blue="0.49748700439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="83" id="KYW-Ix-BZA"/>
                                                             <constraint firstAttribute="width" constant="83" id="VaV-jX-oKp"/>
@@ -443,25 +462,40 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-Ik-8Rc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C68-BR-u4w">
                                                 <rect key="frame" x="0.0" y="240" width="262" height="45"/>
-                                                <color key="backgroundColor" red="0.90978652240000002" green="0.57429099080000001" blue="0.42187169190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-Ik-8Rc" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                        <rect key="frame" x="-0.5" y="0.0" width="262" height="45"/>
+                                                        <color key="backgroundColor" red="0.90978652240000002" green="0.57429099080000001" blue="0.42187169190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                                        <state key="normal" title="Create account">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="createAccountPressed:" destination="x0l-OW-UbV" eventType="touchUpInside" id="ha5-16-plc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="LSG-ZP-4OK">
+                                                        <rect key="frame" x="121.5" y="12.5" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="3aj-wt-aOb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bd9-Ik-8Rc" secondAttribute="trailing" id="Bvm-xB-1xS"/>
+                                                    <constraint firstItem="bd9-Ik-8Rc" firstAttribute="top" secondItem="C68-BR-u4w" secondAttribute="top" id="FQQ-Xw-PHp"/>
+                                                    <constraint firstItem="LSG-ZP-4OK" firstAttribute="centerX" secondItem="C68-BR-u4w" secondAttribute="centerX" id="H23-4M-Awb"/>
+                                                    <constraint firstItem="LSG-ZP-4OK" firstAttribute="centerY" secondItem="C68-BR-u4w" secondAttribute="centerY" id="THp-k7-rO5"/>
+                                                    <constraint firstAttribute="height" constant="45" id="gdu-Ly-1N3"/>
+                                                    <constraint firstItem="bd9-Ik-8Rc" firstAttribute="leading" secondItem="C68-BR-u4w" secondAttribute="leading" id="qgc-jw-sel"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bd9-Ik-8Rc" secondAttribute="bottom" id="xAb-UU-99q"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                <state key="normal" title="Create account">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="7"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="createAccountPressed:" destination="x0l-OW-UbV" eventType="touchUpInside" id="ha5-16-plc"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -498,12 +532,18 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="chooseAvatarBtn" destination="4H3-To-cCN" id="MkU-kF-Q5u"/>
+                        <outlet property="chooseBackgroundBtn" destination="rvp-1X-ozF" id="kGS-Rb-2Hh"/>
+                        <outlet property="closeViewBtn" destination="2pa-vK-UYD" id="NWR-ax-4cq"/>
+                        <outlet property="createAccountBtn" destination="bd9-Ik-8Rc" id="Xly-0c-TRV"/>
                         <outlet property="emailTxt" destination="hLG-0p-W4n" id="a2y-eD-mTO"/>
                         <outlet property="passwordTxt" destination="JUY-Um-XiP" id="THs-PE-TyQ"/>
+                        <outlet property="spinner" destination="LSG-ZP-4OK" id="Rwo-az-upS"/>
                         <outlet property="userImg" destination="rVW-hL-a3j" id="QYU-Qq-Rik"/>
                         <outlet property="usernameTxt" destination="8Sh-GD-btW" id="Avi-3c-ixs"/>
                         <segue destination="GcG-pt-SzT" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="D8r-BO-fMG"/>
                         <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="cPb-DR-ZRs"/>
+                        <segue destination="ejN-pG-dq1" kind="show" identifier="toAvatarPicker" id="LWf-HF-plj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -585,7 +625,107 @@
                     <viewLayoutGuide key="safeArea" id="Nxl-Vh-hfr"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="719" y="-369"/>
+            <point key="canvasLocation" x="226" y="-814"/>
+        </scene>
+        <!--Avatar PickerVC-->
+        <scene sceneID="GdI-b4-ks3">
+            <objects>
+                <viewController id="IHr-hX-SA7" customClass="AvatarPickerVC" customModule="quickPlan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zEi-oL-ODa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="daM-R9-LqH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0St-5t-IJ4">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="avatarCell" id="BwQ-yP-lpl" customClass="AvatarCell" customModule="quickPlan" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5V-Dj-3KO" customClass="DesinableView" customModule="quickPlan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uks-AQ-vj1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="uks-AQ-vj1" firstAttribute="top" secondItem="A5V-Dj-3KO" secondAttribute="top" id="ISs-ia-M71"/>
+                                                        <constraint firstItem="uks-AQ-vj1" firstAttribute="leading" secondItem="A5V-Dj-3KO" secondAttribute="leading" id="bCM-Hi-7cz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="uks-AQ-vj1" secondAttribute="bottom" id="gPc-c1-Kqe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="uks-AQ-vj1" secondAttribute="trailing" id="sWj-Bh-STJ"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="A5V-Dj-3KO" firstAttribute="top" secondItem="BwQ-yP-lpl" secondAttribute="top" id="F07-pa-odf"/>
+                                            <constraint firstItem="A5V-Dj-3KO" firstAttribute="leading" secondItem="BwQ-yP-lpl" secondAttribute="leading" id="Tfk-Af-6Us"/>
+                                            <constraint firstAttribute="bottom" secondItem="A5V-Dj-3KO" secondAttribute="bottom" id="Zam-g5-3X3"/>
+                                            <constraint firstAttribute="trailing" secondItem="A5V-Dj-3KO" secondAttribute="trailing" id="zFz-Zz-y2D"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="avatarContainerView" destination="A5V-Dj-3KO" id="jBR-1a-ZVp"/>
+                                            <outlet property="avatarImage" destination="uks-AQ-vj1" id="mqO-Dc-A8n"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dNJ-ym-m87" firstAttribute="trailing" secondItem="daM-R9-LqH" secondAttribute="trailing" id="ArP-Hn-QwA"/>
+                            <constraint firstItem="daM-R9-LqH" firstAttribute="leading" secondItem="dNJ-ym-m87" secondAttribute="leading" id="K6c-4i-ugA"/>
+                            <constraint firstItem="daM-R9-LqH" firstAttribute="top" secondItem="dNJ-ym-m87" secondAttribute="top" id="gQ6-S9-7XL"/>
+                            <constraint firstItem="dNJ-ym-m87" firstAttribute="bottom" secondItem="daM-R9-LqH" secondAttribute="bottom" id="sPG-do-QLE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dNJ-ym-m87"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cnH-Yr-Y67">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3ta-xc-pdY">
+                            <color key="tintColor" red="0.1960784314" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="closePressed:" destination="IHr-hX-SA7" id="esg-Xt-Rke"/>
+                            </connections>
+                        </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="wel-FU-w8U">
+                            <rect key="frame" x="117" y="7" width="141" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Dark"/>
+                                <segment title="Light"/>
+                            </segments>
+                            <color key="tintColor" red="0.96470588239999999" green="0.54901960780000003" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="segmentControlChanged:" destination="IHr-hX-SA7" eventType="valueChanged" id="cOY-7Z-h7a"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="daM-R9-LqH" id="doe-01-nXz"/>
+                        <outlet property="segmentControl" destination="wel-FU-w8U" id="CeP-iH-1tX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTL-19-hXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.5999999999999" y="-815.44227886056979"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SXU-yw-xHO">
@@ -612,6 +752,24 @@
             </objects>
             <point key="canvasLocation" x="3593.5999999999999" y="315.74212893553226"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T6X-VB-eXq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ejN-pG-dq1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Whn-to-adK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IHr-hX-SA7" kind="relationship" relationship="rootViewController" id="zVM-Cy-AWH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DvY-FU-PKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-815"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_btn" width="78" height="78"/>
@@ -623,6 +781,6 @@
         <image name="user" width="83" height="83"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cPb-DR-ZRs"/>
+        <segue reference="QXo-Ly-Qyi"/>
     </inferredMetricsTieBreakers>
 </document>
