@@ -26,8 +26,6 @@
 		543F5F8B20647870000C342E /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F822064786F000C342E /* Ubuntu-C.ttf */; };
 		543F5F9020647CA1000C342E /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F8F20647CA1000C342E /* ShadowView.swift */; };
 		543F5F942065C304000C342E /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F932065C304000C342E /* DesignableView.swift */; };
-		543F5F992065C7DC000C342E /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F982065C7DC000C342E /* ProfileVC.xib */; };
-		543F5F9C2065C8D6000C342E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F9B2065C8D6000C342E /* ProfileVC.swift */; };
 		543F5F9E2065CE22000C342E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5F9D2065CE22000C342E /* BlurView.swift */; };
 		543F5FA02065D5CF000C342E /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 543F5F9F2065D5CF000C342E /* CreateChannelVC.xib */; };
 		543F5FA22065D64D000C342E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FA12065D64D000C342E /* CreateChannelVC.swift */; };
@@ -36,6 +34,8 @@
 		543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAA2065DD72000C342E /* ChannelVC.swift */; };
 		543F5FAD2069C46C000C342E /* DesignableNavigationCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAC2069C46C000C342E /* DesignableNavigationCtrl.swift */; };
 		543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F5FAE2069C4EB000C342E /* CustomNavigationBar.swift */; };
+		5441DE4B207A4571002BC793 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441DE49207A4571002BC793 /* UserProfileVC.swift */; };
+		5441DE4C207A4571002BC793 /* UserProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5441DE4A207A4571002BC793 /* UserProfileVC.xib */; };
 		5488C51B206B169100C2B0CD /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488C51A206B169100C2B0CD /* ChannelCell.swift */; };
 		5488C51D206B16B700C2B0CD /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488C51C206B16B700C2B0CD /* Channel.swift */; };
 		54AC2ED5206C783700E71432 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC2ED4206C783700E71432 /* Constants.swift */; };
@@ -90,8 +90,6 @@
 		543F5F822064786F000C342E /* Ubuntu-C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-C.ttf"; sourceTree = "<group>"; };
 		543F5F8F20647CA1000C342E /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		543F5F932065C304000C342E /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		543F5F982065C7DC000C342E /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
-		543F5F9B2065C8D6000C342E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		543F5F9D2065CE22000C342E /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		543F5F9F2065D5CF000C342E /* CreateChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		543F5FA12065D64D000C342E /* CreateChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		543F5FAA2065DD72000C342E /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		543F5FAC2069C46C000C342E /* DesignableNavigationCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableNavigationCtrl.swift; sourceTree = "<group>"; };
 		543F5FAE2069C4EB000C342E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		5441DE49207A4571002BC793 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		5441DE4A207A4571002BC793 /* UserProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileVC.xib; sourceTree = "<group>"; };
 		5488C51A206B169100C2B0CD /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		5488C51C206B16B700C2B0CD /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		54AC2ED4206C783700E71432 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		543F5F972065C7A8000C342E /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				543F5F982065C7DC000C342E /* ProfileVC.xib */,
+				5441DE4A207A4571002BC793 /* UserProfileVC.xib */,
 				543F5F9F2065D5CF000C342E /* CreateChannelVC.xib */,
 			);
 			path = Xibs;
@@ -291,7 +291,7 @@
 		543F5F9A2065C812000C342E /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				543F5F9B2065C8D6000C342E /* ProfileVC.swift */,
+				5441DE49207A4571002BC793 /* UserProfileVC.swift */,
 				543F5FA12065D64D000C342E /* CreateChannelVC.swift */,
 			);
 			path = Xibs;
@@ -474,7 +474,7 @@
 				543F5F4F2062BBC4000C342E /* LaunchScreen.storyboard in Resources */,
 				543F5F8B20647870000C342E /* Ubuntu-C.ttf in Resources */,
 				543F5F4C2062BBC4000C342E /* Assets.xcassets in Resources */,
-				543F5F992065C7DC000C342E /* ProfileVC.xib in Resources */,
+				5441DE4C207A4571002BC793 /* UserProfileVC.xib in Resources */,
 				543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,7 +666,6 @@
 				543F5F9020647CA1000C342E /* ShadowView.swift in Sources */,
 				54D834832077CA1B0043CC2B /* AvatarPickerVC.swift in Sources */,
 				543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */,
-				543F5F9C2065C8D6000C342E /* ProfileVC.swift in Sources */,
 				543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */,
 				54AC2ED5206C783700E71432 /* Constants.swift in Sources */,
 				543F5FA92065DD5F000C342E /* ChatVC.swift in Sources */,
@@ -679,6 +678,7 @@
 				5488C51B206B169100C2B0CD /* ChannelCell.swift in Sources */,
 				543F5FA22065D64D000C342E /* CreateChannelVC.swift in Sources */,
 				543F5F452062BBC4000C342E /* AppDelegate.swift in Sources */,
+				5441DE4B207A4571002BC793 /* UserProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

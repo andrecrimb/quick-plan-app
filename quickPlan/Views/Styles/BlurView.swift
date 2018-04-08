@@ -30,8 +30,6 @@ class BlurView: UIView {
                 blurStyleEffect = UIBlurEffectStyle.light
             case 3:
                 blurStyleEffect = UIBlurEffectStyle.extraLight
-            case 3:
-                blurStyleEffect = UIBlurEffectStyle.regular
             default:
                 blurStyleEffect = UIBlurEffectStyle.regular
             }

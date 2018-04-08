@@ -42,7 +42,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yH-bH-zQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="up5-Bq-taB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="-48"/>
+            <point key="canvasLocation" x="2447" y="-87"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="OFm-Ne-4mL">
@@ -66,7 +66,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="NSG-2w-vON" customClass="DesignableImage" customModule="quickPlan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
-                                                        <color key="backgroundColor" red="0.43018838599999998" green="1" blue="0.49748700439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="83" id="1vM-zh-XBb"/>
                                                             <constraint firstAttribute="width" constant="83" id="E12-5E-Jlc"/>
@@ -117,6 +117,10 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0Tx-tv-uxE" appends="YES" id="qzO-fC-vop"/>
+                                </connections>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7oK-iv-tA5">
                                 <rect key="frame" x="0.0" y="579" width="375" height="78"/>
@@ -192,10 +196,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Wu-IC-Bd6"/>
                     </view>
+                    <connections>
+                        <outlet property="userImage" destination="NSG-2w-vON" id="Icu-Hv-1nM"/>
+                        <outlet property="userNameLabel" destination="N6v-jn-eQJ" id="DDd-E5-WSe"/>
+                        <segue destination="Yw7-tM-P7D" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="9HU-Aa-Q9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhe-GK-LIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Yw7-tM-P7D" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="0Tx-tv-uxE">
+                    <connections>
+                        <action selector="profileViewPressed:" destination="ZTc-3m-isG" id="2Ln-UK-yBk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6396" y="-422.33883058470769"/>
+            <point key="canvasLocation" x="3593" y="-441"/>
         </scene>
         <!--nodeJS-->
         <scene sceneID="3pa-5d-z5A">
@@ -341,13 +356,13 @@
                         <outlet property="loginBtn" destination="mAE-f0-7Cc" id="q39-sH-yNh"/>
                         <outlet property="passwordTxt" destination="kPs-N9-KDJ" id="ixs-D0-C7I"/>
                         <outlet property="spinner" destination="D5L-ew-c7O" id="NGF-ue-Lxc"/>
-                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="QXo-Ly-Qyi"/>
                         <segue destination="x0l-OW-UbV" kind="show" identifier="toCreateAccount" id="xbd-lP-wXY"/>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="aGn-eh-nr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="342"/>
+            <point key="canvasLocation" x="942" y="187"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="HoW-Y9-wVn">
@@ -542,8 +557,8 @@
                         <outlet property="userImg" destination="rVW-hL-a3j" id="QYU-Qq-Rik"/>
                         <outlet property="usernameTxt" destination="8Sh-GD-btW" id="Avi-3c-ixs"/>
                         <segue destination="GcG-pt-SzT" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="D8r-BO-fMG"/>
-                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="cPb-DR-ZRs"/>
                         <segue destination="ejN-pG-dq1" kind="show" identifier="toAvatarPicker" id="LWf-HF-plj"/>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="e0d-hw-zWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,7 +640,7 @@
                     <viewLayoutGuide key="safeArea" id="Nxl-Vh-hfr"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="226" y="-814"/>
+            <point key="canvasLocation" x="942" y="-550"/>
         </scene>
         <!--Avatar PickerVC-->
         <scene sceneID="GdI-b4-ks3">
@@ -725,7 +740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTL-19-hXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.5999999999999" y="-815.44227886056979"/>
+            <point key="canvasLocation" x="2129" y="-1329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SXU-yw-xHO">
@@ -768,7 +783,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvY-FU-PKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-815"/>
+            <point key="canvasLocation" x="1356" y="-1329"/>
         </scene>
     </scenes>
     <resources>
@@ -781,6 +796,6 @@
         <image name="user" width="83" height="83"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QXo-Ly-Qyi"/>
+        <segue reference="e0d-hw-zWJ"/>
     </inferredMetricsTieBreakers>
 </document>
