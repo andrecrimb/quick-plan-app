@@ -29,6 +29,8 @@ struct Constants {
         static let Register = "\(Urls.Base)account/register"
         static let Login = "\(Urls.Base)account/login"
         static let UserAdd = "\(Urls.Base)user/add"
+        static let UserByEmail = "\(Urls.Base)user/byEmail/"
+        static let GetChannels = "\(Urls.Base)channel/"
     }
     
     // MARK: Segues
@@ -50,6 +52,10 @@ struct Constants {
     // MARK: Headers
     struct Headers {
         static let AppJson = [
+            "Content-Type": "application/json"
+        ]
+        static let Bearer = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
             "Content-Type": "application/json"
         ]
     }

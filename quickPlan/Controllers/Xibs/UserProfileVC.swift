@@ -26,6 +26,14 @@ class UserProfileVC: UIViewController {
         userEmail.text = UserDataService.instance.email
         profileImage.image = UIImage(named: UserDataService.instance.avatarName)
         profileImage.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
+        
+        // MARK: Add tap gesture to close modal 
+        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(UserProfileVC.closeTap(_:)))
+        bgView.addGestureRecognizer(closeTouch)
+    }
+    
+    @objc func closeTap(_ recognizer: UITapGestureRecognizer){
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
@@ -37,5 +45,7 @@ class UserProfileVC: UIViewController {
     @IBAction func closeModalPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
 
 }

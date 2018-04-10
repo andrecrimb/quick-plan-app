@@ -45,13 +45,13 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAccountPressed(_ sender: Any) {
-        loading(isLoading: true)
+        
         guard let email = emailTxt.text, emailTxt.text != "" else {
-            print("Invalid email)")
+            print("Invalid email")
             return
         }
         guard let pass = passwordTxt.text, passwordTxt.text != "" else {
-            print("Invalid passworf")
+            print("Invalid password")
             return
         }
         guard let name = usernameTxt.text, usernameTxt.text != "" else {
@@ -59,24 +59,46 @@ class CreateAccountVC: UIViewController {
             return
         }
         
+        loading(isLoading: true)
+        
         AuthService.instance.registerUser(email: email, password: pass) { (success) in
             if success {
-                print("ANDRE: Registred user!")
+                print("ANDRE: registerUser\n\(success)")
                 AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
+                    print("ANDRE: loginUser!\n\(success)")
                     if success{
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
+                            print("ANDRE: createUser!\n\(success)")
                             if success{
-                                self.loading(isLoading: false)
                                 self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
                                 NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
+                            } else {
+                                self.errorMessage()
                             }
-                            
+                            self.loading(isLoading: false)
                         })
                     }
+                    else {
+                        self.errorMessage()
+                    }
+                    self.loading(isLoading: false)
                 })
             }
+            else {
+                self.errorMessage()
+            }
+            self.loading(isLoading: false)
         }
     }
+    
+    // MARK: Error message
+    func errorMessage(){
+        let alert = UIAlertController(title: "Ops...", message: "Username or e-mail already exists", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     // MARK: Subscribing to keybord notifications to scroll the view
     override func viewWillAppear(_ animated: Bool) {

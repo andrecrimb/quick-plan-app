@@ -56,7 +56,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-Da-Und">
-                                <rect key="frame" x="0.0" y="36" width="375" height="152.5"/>
+                                <rect key="frame" x="0.0" y="36" width="375" height="151.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="COU-Sx-QQV">
                                         <rect key="frame" x="146" y="0.0" width="83" height="83"/>
@@ -99,7 +99,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="RuN-uI-oLh">
-                                        <rect key="frame" x="133" y="108" width="109" height="44.5"/>
+                                        <rect key="frame" x="133" y="108" width="109" height="43.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andre Rosa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-jn-eQJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="22.5"/>
@@ -108,10 +108,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="meG-oo-mtX">
-                                                <rect key="frame" x="50" y="35.5" width="9" height="9"/>
+                                                <rect key="frame" x="50.5" y="35.5" width="8" height="8"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="9" id="BsR-Zi-RgP"/>
-                                                    <constraint firstAttribute="width" constant="9" id="dCP-zR-85N"/>
+                                                    <constraint firstAttribute="height" constant="8" id="BsR-Zi-RgP"/>
+                                                    <constraint firstAttribute="width" constant="8" id="dCP-zR-85N"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -132,7 +132,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-ms-bqz">
-                                <rect key="frame" x="16" y="204.5" width="343" height="364.5"/>
+                                <rect key="frame" x="16" y="203.5" width="343" height="365.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -352,12 +352,12 @@
                     </view>
                     <connections>
                         <outlet property="createAccountBtn" destination="BZt-a5-gA4" id="EIf-j3-Q6s"/>
-                        <outlet property="emailTxt" destination="VUc-Sc-lth" id="C5p-wA-Wbw"/>
+                        <outlet property="emailTxt" destination="VUc-Sc-lth" id="e2z-EO-3Oh"/>
                         <outlet property="loginBtn" destination="mAE-f0-7Cc" id="q39-sH-yNh"/>
                         <outlet property="passwordTxt" destination="kPs-N9-KDJ" id="ixs-D0-C7I"/>
                         <outlet property="spinner" destination="D5L-ew-c7O" id="NGF-ue-Lxc"/>
                         <segue destination="x0l-OW-UbV" kind="show" identifier="toCreateAccount" id="xbd-lP-wXY"/>
-                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="aGn-eh-nr9"/>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="3pd-e2-73t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -558,7 +558,7 @@
                         <outlet property="usernameTxt" destination="8Sh-GD-btW" id="Avi-3c-ixs"/>
                         <segue destination="GcG-pt-SzT" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwindWithSegue:" id="D8r-BO-fMG"/>
                         <segue destination="ejN-pG-dq1" kind="show" identifier="toAvatarPicker" id="LWf-HF-plj"/>
-                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="e0d-hw-zWJ"/>
+                        <segue destination="5oL-bJ-149" kind="show" identifier="toChannels" id="Cv3-2k-zhn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uy-ig-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -796,6 +796,6 @@
         <image name="user" width="83" height="83"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e0d-hw-zWJ"/>
+        <segue reference="3pd-e2-73t"/>
     </inferredMetricsTieBreakers>
 </document>

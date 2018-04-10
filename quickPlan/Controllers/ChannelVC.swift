@@ -19,6 +19,10 @@ class ChannelVC: UIViewController {
         setupView()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        getUserInfo()
+    }
+    
     func setupView(){
         revealViewController().rearViewRevealWidth = view.frame.size.width - 60
         getUserInfo()
@@ -44,6 +48,12 @@ class ChannelVC: UIViewController {
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
             userImage.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
         } else {
+            // MARK: Dismiss all views to root view controller
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                appDelegate.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                (appDelegate.window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: true)
+            }
+
             userNameLabel.text = ""
             userImage.image =  #imageLiteral(resourceName: "user")
         }

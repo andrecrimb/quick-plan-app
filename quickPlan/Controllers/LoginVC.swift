@@ -18,6 +18,15 @@ class LoginVC: UIViewController {
         setupView()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        cleanFields()
+    }
+    
+    func cleanFields(){
+        emailTxt.text = ""
+        passwordTxt.text = ""
+    }
+    
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     // MARK: Setup All view adjusts before render
@@ -50,9 +59,39 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        
+        guard let email = emailTxt.text, emailTxt.text != "" else {return}
+        guard let pass = passwordTxt.text, passwordTxt.text != "" else {return}
+        
         loading(isLoading: true)
-//        performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
+        
+        AuthService.instance.loginUser(email: email, password: pass) { (success) in
+            if success{
+                AuthService.instance.findUserByEmail(completion: { (success) in
+                    if success{
+                        NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
+                        self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
+                    } else {
+                        self.loginErrorMessage()
+                    }
+                    self.loading(isLoading: false)
+                })
+            } else {
+                self.loading(isLoading: false)
+                self.loginErrorMessage()
+            }
+        }
+        
+        
     }
+    
+    func loginErrorMessage(){
+        let alert = UIAlertController(title: "Ops...", message: "Wrong e-mail or password", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     @IBAction func createAccountBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: Constants.Segues.ToCreateAccount, sender: nil)

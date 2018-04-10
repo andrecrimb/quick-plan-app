@@ -14,11 +14,24 @@ class ChatVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configMenuBtn()
-        configNavViewUI()
+        setupView()
     }
     
+    func setupView(){
+        configMenuBtn()
+        configNavViewUI()
+        
+        if AuthService.instance.isLoggedIn{
+            AuthService.instance.findUserByEmail { (success) in
+                NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
+            }
+        }
+        
+        MessageService.instance.findAllChannel { (success) in
+            
+        }
+        
+    }
     
     func configMenuBtn(){
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
@@ -68,5 +81,4 @@ class ChatVC: UIViewController {
         navView.sizeToFit()
     }
     
-
 }
