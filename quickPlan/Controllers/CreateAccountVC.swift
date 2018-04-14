@@ -71,7 +71,7 @@ class CreateAccountVC: UIViewController {
                             print("ANDRE: createUser!\n\(success)")
                             if success{
                                 self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
-                                NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
+                                NotificationCenter.default.post(name: Constants.Notifications.UserDataDidChange, object: nil)
                             } else {
                                 self.errorMessage()
                             }

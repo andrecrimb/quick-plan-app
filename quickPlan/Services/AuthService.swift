@@ -92,14 +92,20 @@ class AuthService {
                 do{
                     guard let data = response.data else {return}
                     let json = try JSON(data: data)
-                    
+                   
                     self.authToken = json["token"].stringValue
                     self.userEmail = json["user"].stringValue
                     
+                    if self.authToken == "" || self.userEmail == "" {
+                        
+                        completion(false)
+                        return
+                    }
+                    
                     completion(true)
                     self.isLoggedIn = true
-                } catch {
-                    debugPrint("Problem Get data")
+                } catch let error{
+                    debugPrint("ANDRE: \nERROR: \(error)\n")
                 }
                
                 

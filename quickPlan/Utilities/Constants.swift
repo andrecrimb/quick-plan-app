@@ -15,13 +15,21 @@ struct Constants {
     // MARK: Reusable Identifiers
     struct Identifiers{
         static let AvatarCell = "avatarCell"
+        static let ChannelCell = "channelCell"
     }
     
     // MARK: Notifications
     struct Notifications {
-        static let NotifUserDataDidChange = Notification.Name("notifuserDataChanged")
+        static let UserDataDidChange = Notification.Name("notifuserDataChanged")
+        static let ChannelsLoaded = Notification.Name("channelsLoaded")
+        static let ChannelSelected = Notification.Name("channelSelected")
     }
     
+    // MARK: Sockets Events
+    struct SocketsEvents{
+        static let NewChannel = "newChannel"
+        static let ChannelCreated = "channelCreated"
+    }
     
     // MARK: URLs
     struct Urls {

@@ -69,7 +69,7 @@ class LoginVC: UIViewController {
             if success{
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success{
-                        NotificationCenter.default.post(name: Constants.Notifications.NotifUserDataDidChange, object: nil)
+                        NotificationCenter.default.post(name: Constants.Notifications.UserDataDidChange, object: nil)
                         self.performSegue(withIdentifier: Constants.Segues.ToChannels, sender: nil)
                     } else {
                         self.loginErrorMessage()

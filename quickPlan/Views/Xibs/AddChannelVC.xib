@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -20,78 +20,88 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddChannelVC" customModule="quickPlan" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="i5M-Pr-FkT" id="KWe-kT-RWt"/>
+                <outlet property="channelDesc" destination="di2-0o-NXa" id="MCk-Xk-hTo"/>
+                <outlet property="nameTxt" destination="l7g-kb-21z" id="A8j-Vn-wGy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gat-5d-NOz" customClass="ShadowView" customModule="quickPlan" customModuleProvider="target">
-                    <rect key="frame" x="28" y="144" width="319" height="299"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxW-TP-c9L" customClass="ShadowView" customModule="quickPlan" customModuleProvider="target">
+                    <rect key="frame" x="0.5" y="54.5" width="319" height="299"/>
                     <subviews>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWa-OP-3uU" customClass="BlurView" customModule="quickPlan" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7X7-QW-9QI" customClass="BlurView" customModule="quickPlan" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="319" height="299"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cIP-lQ-8wv">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-aK-0SO">
                                     <rect key="frame" x="16" y="5" width="287" height="272"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="PhQ-qR-CwD">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-H3-hZa">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpc-if-TQ6">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-Zn-bqF">
                                                     <rect key="frame" x="237" y="0.0" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="chH-jn-ck9"/>
-                                                        <constraint firstAttribute="height" constant="50" id="u3Y-Ak-F1S"/>
+                                                        <constraint firstAttribute="height" constant="50" id="AEn-c5-XdP"/>
+                                                        <constraint firstAttribute="width" constant="50" id="fg0-CA-t14"/>
                                                     </constraints>
                                                     <state key="normal" image="close_btn"/>
+                                                    <connections>
+                                                        <action selector="closeBtnPressed:" destination="-1" eventType="touchUpInside" id="tNJ-YR-9bk"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Xql-1W-Uoz">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="TGk-iY-ieb">
                                             <rect key="frame" x="0.0" y="50" width="287" height="222"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-4Q-n8T">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-na-10a">
                                                     <rect key="frame" x="0.0" y="0.0" width="287" height="152"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcr-93-lU4">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-yc-9Po">
                                                             <rect key="frame" x="0.0" y="0.0" width="287" height="24"/>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="21"/>
                                                             <color key="textColor" red="0.19537433979999999" green="0.21276369689999999" blue="0.2761407495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dep-1S-qsO">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yxk-lI-KFl">
                                                             <rect key="frame" x="0.0" y="32" width="287" height="120"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="nM5-mX-Ntk" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="l7g-kb-21z" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="i2C-Of-pSK"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="bt8-dA-yeB"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES" textContentType="username"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                                 </textField>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Eyv-o3-uCx" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="di2-0o-NXa" customClass="LineTextField" customModule="quickPlan" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="70" width="287" height="50"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="QlW-4s-wx8"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="3kb-8p-t82"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
-                                                                    <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9E-1Z-sKm" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whl-et-No9" customClass="DesignableButton" customModule="quickPlan" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="177" width="287" height="45"/>
                                                     <color key="backgroundColor" red="0.90978652240000002" green="0.57429099080000001" blue="0.42187169190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="ybw-md-XPc"/>
+                                                        <constraint firstAttribute="height" constant="45" id="JbR-NI-exd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                     <state key="normal" title="Create">
@@ -102,6 +112,9 @@
                                                             <real key="value" value="7"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="createChannelPressed:" destination="-1" eventType="touchUpInside" id="tOe-ad-5ud"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -110,10 +123,10 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="cIP-lQ-8wv" secondAttribute="trailing" constant="16" id="1qK-qQ-ZjA"/>
-                                <constraint firstItem="cIP-lQ-8wv" firstAttribute="top" secondItem="qWa-OP-3uU" secondAttribute="top" constant="5" id="Qbs-dr-9hW"/>
-                                <constraint firstAttribute="bottom" secondItem="cIP-lQ-8wv" secondAttribute="bottom" constant="22" id="gyc-lJ-XIM"/>
-                                <constraint firstItem="cIP-lQ-8wv" firstAttribute="leading" secondItem="qWa-OP-3uU" secondAttribute="leading" constant="16" id="uoA-Ld-WmS"/>
+                                <constraint firstItem="B0X-aK-0SO" firstAttribute="leading" secondItem="7X7-QW-9QI" secondAttribute="leading" constant="16" id="8SJ-L3-ibs"/>
+                                <constraint firstItem="B0X-aK-0SO" firstAttribute="top" secondItem="7X7-QW-9QI" secondAttribute="top" constant="5" id="blJ-bv-Fed"/>
+                                <constraint firstAttribute="trailing" secondItem="B0X-aK-0SO" secondAttribute="trailing" constant="16" id="jju-yn-o4q"/>
+                                <constraint firstAttribute="bottom" secondItem="B0X-aK-0SO" secondAttribute="bottom" constant="22" id="lMH-gc-UwO"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="blur" value="YES"/>
@@ -128,13 +141,13 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="J3q-qp-g7Y"/>
-                        <constraint firstItem="qWa-OP-3uU" firstAttribute="leading" secondItem="gat-5d-NOz" secondAttribute="leading" id="Lhp-mj-Ckk"/>
-                        <constraint firstItem="qWa-OP-3uU" firstAttribute="top" secondItem="gat-5d-NOz" secondAttribute="top" id="Whg-vo-hny"/>
-                        <constraint firstAttribute="width" secondItem="gat-5d-NOz" secondAttribute="height" multiplier="16:15" id="XiV-Md-TBa"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="hEE-JH-1Le"/>
-                        <constraint firstAttribute="bottom" secondItem="qWa-OP-3uU" secondAttribute="bottom" id="u0I-Ef-1ur"/>
-                        <constraint firstAttribute="trailing" secondItem="qWa-OP-3uU" secondAttribute="trailing" id="vUb-bh-aAK"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="1lz-P0-wq5"/>
+                        <constraint firstAttribute="trailing" secondItem="7X7-QW-9QI" secondAttribute="trailing" id="Ag0-VK-hmR"/>
+                        <constraint firstAttribute="width" secondItem="HxW-TP-c9L" secondAttribute="height" multiplier="16:15" id="DnY-eT-3aD"/>
+                        <constraint firstAttribute="bottom" secondItem="7X7-QW-9QI" secondAttribute="bottom" id="N4V-xH-oKZ"/>
+                        <constraint firstItem="7X7-QW-9QI" firstAttribute="top" secondItem="HxW-TP-c9L" secondAttribute="top" id="TT0-La-WOl"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="h9d-AF-AhV"/>
+                        <constraint firstItem="7X7-QW-9QI" firstAttribute="leading" secondItem="HxW-TP-c9L" secondAttribute="leading" id="nAC-MO-usY"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -146,11 +159,12 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="gat-5d-NOz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="DRP-e2-aKe"/>
-                <constraint firstItem="gat-5d-NOz" firstAttribute="width" secondItem="gat-5d-NOz" secondAttribute="height" multiplier="16:15" id="L8C-Xm-iTK"/>
-                <constraint firstItem="gat-5d-NOz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zPH-N6-eVX"/>
+                <constraint firstItem="HxW-TP-c9L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S4V-aL-ova"/>
+                <constraint firstItem="HxW-TP-c9L" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-80" id="V4G-5L-UTY"/>
+                <constraint firstItem="HxW-TP-c9L" firstAttribute="width" secondItem="HxW-TP-c9L" secondAttribute="height" multiplier="16:15" id="jfY-3Z-Sqp"/>
+                <constraint firstItem="HxW-TP-c9L" firstAttribute="width" secondItem="HxW-TP-c9L" secondAttribute="height" multiplier="16:15" id="zFe-J6-Umh"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
     <resources>
