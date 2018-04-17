@@ -8,9 +8,16 @@
 
 import UIKit
 
-class ChatVC: UIViewController {
+class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: Outlets
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var sendMessageBtn: UIButton!
+    @IBOutlet weak var messageTxtBox: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Variables
+    var textFieldDelegate = TextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +25,22 @@ class ChatVC: UIViewController {
     }
     
     func setupView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // MARK: Setup Row Height automatically
+        // Obs: the number of lines in label has to be 0
+        tableView.estimatedRowHeight = 80;
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        view.bindToKeyboard()
         configMenuBtn()
         configNavViewUI()
+        
+        messageTxtBox.delegate = textFieldDelegate
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
         
@@ -30,6 +51,10 @@ class ChatVC: UIViewController {
                 NotificationCenter.default.post(name: Constants.Notifications.UserDataDidChange, object: nil)
             }
         }
+    }
+    
+    @objc func handleTap(){
+        view.endEditing(true)
     }
     
     @objc func userDataDidChange(_ notif: Notification){
@@ -66,7 +91,9 @@ class ChatVC: UIViewController {
     func getMessages(){
         guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
-            
+            if success{
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -77,6 +104,21 @@ class ChatVC: UIViewController {
         view.addGestureRecognizer(revealViewController().tapGestureRecognizer())
     }
 
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            guard let message = messageTxtBox.text else {return}
+            
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
+                if success {
+                    self.messageTxtBox.text = ""
+                }
+            }
+        }
+    }
+    
+    
     func configNavViewUI(){
         // MARK: Only execute the code if there's a navigation controller
         if navigationController == nil{
@@ -119,4 +161,31 @@ class ChatVC: UIViewController {
 //        navView.sizeToFit()
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.MessageCell, for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
+    
+    
 }
+
+
+
+
+
+
+

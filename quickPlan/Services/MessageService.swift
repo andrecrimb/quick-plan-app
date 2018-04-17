@@ -69,7 +69,6 @@ class MessageService{
         Alamofire.request("\(Constants.Urls.GetMessages)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Constants.Headers.Bearer).responseJSON { (response) in
             if response.result.error == nil{
                 self.clearMessages()
-                
                 guard let data = response.data else {return}
                 do{
                     if let json = try JSON(data: data).array{
@@ -86,16 +85,16 @@ class MessageService{
                             
                             self.messages.append(message)
                         }
-                        print(self.messages)
+                        print("#Messages \(self.messages)")
                         completion(true)
                     }
                 
                 } catch let error {
-                    debugPrint(error)
+                    debugPrint("\n\nFindAllMessages DO error: \(error)\n\n")
                 }
                 
             } else {
-                debugPrint(response.result.error as Any)
+                debugPrint("\n\nError Request: \(response.result.error as Any)\n\n")
                 completion(false)
             }
         }

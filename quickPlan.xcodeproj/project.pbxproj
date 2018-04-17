@@ -48,6 +48,8 @@
 		54F6D41A20817F7E0001ED04 /* NavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F6D41920817F7E0001ED04 /* NavigationTitleView.xib */; };
 		54F6D41C20817FAA0001ED04 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6D41B20817FAA0001ED04 /* NavigationTitleView.swift */; };
 		54F6D41E2084FD7C0001ED04 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6D41D2084FD7C0001ED04 /* Message.swift */; };
+		54F6D42020857D330001ED04 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6D41F20857D330001ED04 /* KeyboardBoundView.swift */; };
+		54F6D4222085856E0001ED04 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6D4212085856E0001ED04 /* MessageCell.swift */; };
 		6F62A9FAE602750F57864AEC /* Pods_quickPlanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */; };
 		A9C75D14140C4CAE3CD2763A /* Pods_quickPlanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +121,8 @@
 		54F6D41920817F7E0001ED04 /* NavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationTitleView.xib; sourceTree = "<group>"; };
 		54F6D41B20817FAA0001ED04 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		54F6D41D2084FD7C0001ED04 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		54F6D41F20857D330001ED04 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		54F6D4212085856E0001ED04 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5D85915D6A0DFA1EB70D22EA /* Pods-quickPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlan/Pods-quickPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		7E45BB0E4A2D0160D9FAE3C5 /* Pods_quickPlanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8F9508ECD730E1EBF49435 /* Pods-quickPlanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quickPlanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-quickPlanUITests/Pods-quickPlanUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				543F5F7520631DB6000C342E /* Styles */,
 				5488C51A206B169100C2B0CD /* ChannelCell.swift */,
 				541786C02078ECB100011004 /* AvatarCell.swift */,
+				54F6D4212085856E0001ED04 /* MessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 		54AC2ED3206C780E00E71432 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				54F6D41F20857D330001ED04 /* KeyboardBoundView.swift */,
 				54AC2ED4206C783700E71432 /* Constants.swift */,
 				541786C2207912BF00011004 /* TextFieldDelegate.swift */,
 				541786C42079140800011004 /* ViewKeyboardHandler.swift */,
@@ -682,6 +688,7 @@
 				541786C3207912BF00011004 /* TextFieldDelegate.swift in Sources */,
 				54BB981C2075A482004D8706 /* UserDataService.swift in Sources */,
 				543F5F9020647CA1000C342E /* ShadowView.swift in Sources */,
+				54F6D42020857D330001ED04 /* KeyboardBoundView.swift in Sources */,
 				54D834832077CA1B0043CC2B /* AvatarPickerVC.swift in Sources */,
 				543F5FAB2065DD72000C342E /* ChannelVC.swift in Sources */,
 				543F5FAF2069C4EB000C342E /* CustomNavigationBar.swift in Sources */,
@@ -689,6 +696,7 @@
 				54AC2ED5206C783700E71432 /* Constants.swift in Sources */,
 				543F5FA92065DD5F000C342E /* ChatVC.swift in Sources */,
 				54F6D412207C59DA0001ED04 /* MessageService.swift in Sources */,
+				54F6D4222085856E0001ED04 /* MessageCell.swift in Sources */,
 				543F5F942065C304000C342E /* DesignableView.swift in Sources */,
 				543F5FA72065DB16000C342E /* SWRevealViewController.m in Sources */,
 				543F5FAD2069C46C000C342E /* DesignableNavigationCtrl.swift in Sources */,

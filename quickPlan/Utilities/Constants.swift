@@ -16,6 +16,7 @@ struct Constants {
     struct Identifiers{
         static let AvatarCell = "avatarCell"
         static let ChannelCell = "channelCell"
+        static let MessageCell = "messageCell"
     }
     
     // MARK: Notifications
@@ -39,7 +40,7 @@ struct Constants {
         static let UserAdd = "\(Urls.Base)user/add"
         static let UserByEmail = "\(Urls.Base)user/byEmail/"
         static let GetChannels = "\(Urls.Base)channel/"
-        static let GetMessages = "\(Urls.Base)message/byChannel"
+        static let GetMessages = "\(Urls.Base)message/byChannel/"
     }
     
     // MARK: Segues
