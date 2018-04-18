@@ -18,6 +18,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Variables
     var textFieldDelegate = TextFieldDelegate()
+    var isTyping = false
+    var navigateItemTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         configMenuBtn()
         configNavViewUI()
         
+        sendMessageBtn.isEnabled = false
+        
         messageTxtBox.delegate = textFieldDelegate
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
@@ -45,6 +49,42 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: Constants.Notifications.ChannelSelected, object: nil)
+        
+        // MARK: Socket to listen messages on chat
+        SocketService.instance.getChatMessage { (success) in
+            if success {
+                self.tableView.reloadData()
+                self.scrollToTableBottom(animated: true)
+            }
+        }
+        
+        
+        // MARK: Socket to listen when user start to type
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            var names = ""
+            var numberOfTypers = 0
+            for (typingUser,channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.navigationItem.title = "\(names) \(verb) typing"
+            } else {
+                self.navigationItem.title = self.navigateItemTitle
+            }
+        }
         
         if AuthService.instance.isLoggedIn{
             AuthService.instance.findUserByEmail { (success) in
@@ -60,6 +100,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func userDataDidChange(_ notif: Notification){
         if AuthService.instance.isLoggedIn{
             onLoginGetMessages()
+        } else {
+            tableView.reloadData()
         }
     }
     
@@ -72,8 +114,29 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         print(channelName)
         self.navigationItem.title = "#\(channelName)"
+        navigateItemTitle = "#\(channelName)"
         getMessages()
     }
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+        if messageTxtBox.text == "" {
+            isTyping = false
+            sendMessageBtn.isEnabled = false
+            
+            // MARK: Emit socket when user stop type
+            SocketService.instance.socket.emit(Constants.SocketsEvents.StopType, UserDataService.instance.name, channelId)
+        } else {
+            if isTyping == false {
+                sendMessageBtn.isEnabled = true
+                
+                // MARK: Emit socket when user start type
+                SocketService.instance.socket.emit(Constants.SocketsEvents.StartType, UserDataService.instance.name, channelId)
+            }
+            isTyping = true
+        }
+    }
+    
     
     func onLoginGetMessages(){
         MessageService.instance.findAllChannel { (success) in
@@ -93,6 +156,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
             if success{
                 self.tableView.reloadData()
+                self.scrollToTableBottom(animated: false)
             }
         }
     }
@@ -113,11 +177,19 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
                 if success {
                     self.messageTxtBox.text = ""
+                    SocketService.instance.socket.emit(Constants.SocketsEvents.StopType, UserDataService.instance.name, channelId)
                 }
             }
         }
     }
     
+    // MARK: func to scroll table to a specific index path (cell)
+    func scrollToTableBottom(animated: Bool){
+        if MessageService.instance.messages.count > 0 {
+            let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+            self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: animated)
+        }
+    }
     
     func configNavViewUI(){
         // MARK: Only execute the code if there's a navigation controller
@@ -160,6 +232,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        // MARK: Set the navView's frame to fit within the titleView
 //        navView.sizeToFit()
     }
+    
+    // MARK: Delegate methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.MessageCell, for: indexPath) as? MessageCell {

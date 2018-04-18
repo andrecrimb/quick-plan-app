@@ -9,6 +9,7 @@
 // MARK: TypeAlias
 
 typealias CompletionHandler = (_ Success: Bool) -> ()
+typealias CompletionHandlerDicString = (_ typingUsers: [String: String]) -> Void
 
 struct Constants {
     
@@ -30,6 +31,10 @@ struct Constants {
     struct SocketsEvents{
         static let NewChannel = "newChannel"
         static let ChannelCreated = "channelCreated"
+        static let MessageCreated = "messageCreated"
+        static let UserTypingUpdate = "userTypingUpdate"
+        static let StopType = "stopType"
+        static let StartType = "startType"
     }
     
     // MARK: URLs
