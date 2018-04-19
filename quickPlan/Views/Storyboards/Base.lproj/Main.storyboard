@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,38 +145,68 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-Sb-dnT">
-                                                    <rect key="frame" x="15" y="11" width="345" height="32"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GOk-X2-iZP">
+                                                    <rect key="frame" x="10" y="0.0" width="349" height="54"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNf-N4-CrK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="32"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-Sb-dnT">
+                                                            <rect key="frame" x="0.0" y="14.5" width="329" height="25"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNf-N4-CrK">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="q3F-Uf-Oom"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="22"/>
+                                                                    <color key="textColor" red="0.26829716563224792" green="0.55629229545593262" blue="0.69177401065826416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NodeJS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMz-M2-rae">
+                                                                    <rect key="frame" x="24" y="0.0" width="305" height="25"/>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="21"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqI-ND-K7p" customClass="DesinableView" customModule="quickPlan" customModuleProvider="target">
+                                                            <rect key="frame" x="329" y="17" width="20" height="20"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-Kf-aFI">
+                                                                    <rect key="frame" x="6.5" y="3" width="7.5" height="15"/>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="13"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.2682971656" green="0.55629229550000003" blue="0.6917740107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="q3F-Uf-Oom"/>
+                                                                <constraint firstAttribute="height" constant="20" id="5Tz-KD-bjt"/>
+                                                                <constraint firstItem="lDJ-Kf-aFI" firstAttribute="centerY" secondItem="NqI-ND-K7p" secondAttribute="centerY" id="DCg-XX-EUf"/>
+                                                                <constraint firstItem="lDJ-Kf-aFI" firstAttribute="centerX" secondItem="NqI-ND-K7p" secondAttribute="centerX" id="K3a-qb-hxq"/>
+                                                                <constraint firstAttribute="width" constant="20" id="n2k-s6-Wq6"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="22"/>
-                                                            <color key="textColor" red="0.26829716563224792" green="0.55629229545593262" blue="0.69177401065826416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NodeJS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMz-M2-rae">
-                                                            <rect key="frame" x="24" y="0.0" width="321" height="32"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="21"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="mqQ-Sb-dnT" firstAttribute="leading" secondItem="bfm-mg-LO1" secondAttribute="leadingMargin" id="LfB-oe-5sG"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mqQ-Sb-dnT" secondAttribute="bottom" id="Sgo-eI-tV2"/>
-                                                <constraint firstItem="mqQ-Sb-dnT" firstAttribute="top" secondItem="bfm-mg-LO1" secondAttribute="topMargin" id="gZ0-Df-WtM"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="mqQ-Sb-dnT" secondAttribute="trailing" id="woG-6y-REG"/>
+                                                <constraint firstAttribute="trailing" secondItem="GOk-X2-iZP" secondAttribute="trailing" constant="16" id="AnA-ak-LzX"/>
+                                                <constraint firstItem="GOk-X2-iZP" firstAttribute="top" secondItem="bfm-mg-LO1" secondAttribute="top" id="Dvq-q5-r1G"/>
+                                                <constraint firstItem="GOk-X2-iZP" firstAttribute="leading" secondItem="bfm-mg-LO1" secondAttribute="leading" constant="10" id="eCW-BD-BWe"/>
+                                                <constraint firstAttribute="bottom" secondItem="GOk-X2-iZP" secondAttribute="bottom" id="zhU-bj-yPt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="channelName" destination="PMz-M2-rae" id="CAU-aI-26V"/>
+                                            <outlet property="unreadChannelLabel" destination="lDJ-Kf-aFI" id="8Sh-ME-it1"/>
+                                            <outlet property="unreadChannelView" destination="NqI-ND-K7p" id="hWr-MK-Zt6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

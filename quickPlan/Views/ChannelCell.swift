@@ -12,6 +12,10 @@ class ChannelCell: UITableViewCell {
 
     // MARK: Outlets
     @IBOutlet weak var channelName: UILabel!
+    @IBOutlet weak var unreadChannelView: UIView!
+    @IBOutlet weak var unreadChannelLabel: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +25,17 @@ class ChannelCell: UITableViewCell {
     func configureCell(channel: Channel){
         let title = channel.channelTitle ?? ""
         channelName.text = title
+        unreadChannelView.isHidden = true
+        
+        var unreadCount = 0
+        
+        for id in MessageService.instance.unreadChannels {
+            if id == channel.id {
+                unreadChannelView.isHidden = false
+                unreadCount = unreadCount + 1
+            }
+        }
+        unreadChannelLabel.text = "\(unreadCount)"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

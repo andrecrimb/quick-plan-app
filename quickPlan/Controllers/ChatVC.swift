@@ -51,12 +51,23 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: Constants.Notifications.ChannelSelected, object: nil)
         
         // MARK: Socket to listen messages on chat
-        SocketService.instance.getChatMessage { (success) in
-            if success {
+        
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
-                self.scrollToTableBottom(animated: true)
+                if MessageService.instance.messages.count > 0 {
+                    self.scrollToTableBottom(animated: true)
+                }
             }
         }
+        
+//        SocketService.instance.getChatMessage { (success) in
+//            if success {
+//                self.tableView.reloadData()
+//                self.scrollToTableBottom(animated: true)
+//            }
+//        }
         
         
         // MARK: Socket to listen when user start to type

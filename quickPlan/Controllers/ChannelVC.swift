@@ -17,15 +17,10 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        SocketService.instance.getChannel { (success) in
-            if success {
-                self.tableView.reloadData()
-            }
-        }
-        
+    
         setupView()
     }
     
@@ -42,6 +37,19 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         getUserInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: Constants.Notifications.ChannelsLoaded, object: nil)
+     
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
+        
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn{
+                MessageService.instance.unreadChannels.append(newMessage.channelId)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @objc func userDataDidChange(_ notif: Notification){
@@ -110,9 +118,17 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: Select channel and post notification
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let channel = MessageService.instance.channels[indexPath.row]
+        
+        if MessageService.instance.unreadChannels.count > 0 {
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id}
+        }
+        
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        
         MessageService.instance.selectedChannel = channel
         NotificationCenter.default.post(name: Constants.Notifications.ChannelSelected, object: nil)
-        
         self.revealViewController().revealToggle(animated: true)
     }
     
