@@ -60,8 +60,8 @@ class AuthService {
                 completion(true)
                 
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
         }
 
@@ -110,8 +110,8 @@ class AuthService {
                
                 
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
         }
     }
@@ -134,8 +134,8 @@ class AuthService {
                 self.setUserInfoData(data: data)
                 completion(true)
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
             
         }
@@ -149,8 +149,8 @@ class AuthService {
                 self.setUserInfoData(data: data)
                 completion(true)
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
         }
     }
@@ -167,6 +167,25 @@ class AuthService {
             UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
         } catch {
             debugPrint("Problem Get data")
+        }
+    }
+    
+    func updateUser(name: String, email: String, completion: @escaping CompletionHandler){
+        let body: [String: String] = [
+            "name": name,
+            "email": email,
+            "avatarName": UserDataService.instance.avatarName,
+            "avatarColor": UserDataService.instance.avatarColor
+        ]
+        
+        Alamofire.request("\(Constants.Urls.UpdateUser)\(UserDataService.instance.id)", method: .put, parameters: body, encoding: JSONEncoding.default, headers: Constants.Headers.Bearer).responseJSON { (response) in
+            if response.result.error == nil {
+                UserDataService.instance.setUserNameAndEmail(name: name, email: email)
+                completion(true)
+            } else {
+                debugPrint(response.result.error as Any)
+                completion(false)
+            }
         }
     }
     

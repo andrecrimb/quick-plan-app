@@ -46,6 +46,7 @@ struct Constants {
         static let UserByEmail = "\(Urls.Base)user/byEmail/"
         static let GetChannels = "\(Urls.Base)channel/"
         static let GetMessages = "\(Urls.Base)message/byChannel/"
+        static let UpdateUser = "\(Urls.Base)user/"
     }
     
     // MARK: Segues
