@@ -26,6 +26,7 @@ class SocketService: NSObject {
     
     // MARK: Close the connection with the api
     func closeConnection(){
+        socket.removeAllHandlers()
         socket.disconnect()
     }
     
@@ -50,7 +51,7 @@ class SocketService: NSObject {
     
     func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler){
         let user = UserDataService.instance
-        socket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        socket.emit(Constants.SocketsEvents.NewMessage, messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
         completion(true)
         
     }

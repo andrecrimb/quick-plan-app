@@ -97,18 +97,17 @@ class AuthService {
                     self.userEmail = json["user"].stringValue
                     
                     if self.authToken == "" || self.userEmail == "" {
-                        
                         completion(false)
                         return
                     }
                     
                     completion(true)
                     self.isLoggedIn = true
+                    
+                    SocketService.instance.establishConnection()
                 } catch let error{
                     debugPrint("ANDRE: \nERROR: \(error)\n")
                 }
-               
-                
             } else {
                 debugPrint(response.result.error as Any)
                 completion(false)

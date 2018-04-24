@@ -25,18 +25,19 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         getUserInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.view.frame.size.width = self.revealViewController().rearViewRevealWidth
     }
     
     func setupView(){
         revealViewController().rearViewRevealWidth = view.frame.size.width - 60
         getUserInfo()
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: Constants.Notifications.ChannelsLoaded, object: nil)
+        subscribeToNotificationCenter()
      
         SocketService.instance.getChannel { (success) in
             if success {
@@ -50,6 +51,21 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromNotificationCenter()
+    }
+    
+    func subscribeToNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: Constants.Notifications.ChannelsLoaded, object: nil)
+    }
+    
+    func unsubscribeFromNotificationCenter() {
+        NotificationCenter.default.removeObserver(self, name: Constants.Notifications.UserDataDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Constants.Notifications.ChannelsLoaded, object: nil)
     }
     
     @objc func userDataDidChange(_ notif: Notification){

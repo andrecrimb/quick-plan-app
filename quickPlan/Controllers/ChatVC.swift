@@ -26,32 +26,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setupView()
     }
     
-    func setupView(){
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // MARK: Setup Row Height automatically
-        // Obs: the number of lines in label has to be 0
-        tableView.estimatedRowHeight = 80;
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        view.bindToKeyboard()
-        configMenuBtn()
-        configNavViewUI()
-        
-        sendMessageBtn.isEnabled = false
-        
-        messageTxtBox.delegate = textFieldDelegate
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
-        view.addGestureRecognizer(tap)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: Constants.Notifications.ChannelSelected, object: nil)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // MARK: Socket to listen messages on chat
-        
         SocketService.instance.getChatMessage { (newMessage) in
             if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
@@ -61,14 +38,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
-        
-//        SocketService.instance.getChatMessage { (success) in
-//            if success {
-//                self.tableView.reloadData()
-//                self.scrollToTableBottom(animated: true)
-//            }
-//        }
-        
         
         // MARK: Socket to listen when user start to type
         SocketService.instance.getTypingUsers { (typingUsers) in
@@ -96,12 +65,49 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.navigationItem.title = self.navigateItemTitle
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromNotificationCenter()
+    }
+    
+    func setupView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // MARK: Setup Row Height automatically
+        // Obs: the number of lines in label has to be 0
+        tableView.estimatedRowHeight = 80;
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        view.bindToKeyboard()
+        configMenuBtn()
+        configNavViewUI()
+        
+        sendMessageBtn.isEnabled = false
+        messageTxtBox.delegate = textFieldDelegate
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
+        
+        subscribeToNotificationCenter()
         
         if AuthService.instance.isLoggedIn{
             AuthService.instance.findUserByEmail { (success) in
                 NotificationCenter.default.post(name: Constants.Notifications.UserDataDidChange, object: nil)
             }
         }
+    }
+    
+    func subscribeToNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: Constants.Notifications.UserDataDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: Constants.Notifications.ChannelSelected, object: nil)
+    }
+    
+    func unsubscribeFromNotificationCenter() {
+        NotificationCenter.default.removeObserver(self, name: Constants.Notifications.UserDataDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Constants.Notifications.ChannelSelected, object: nil)
     }
     
     @objc func handleTap(){
@@ -123,7 +129,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func updateWithChannel(){
         // MARK: If can't find and string set and empty string
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
-        print(channelName)
         self.navigationItem.title = "#\(channelName)"
         navigateItemTitle = "#\(channelName)"
         getMessages()
@@ -140,7 +145,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             if isTyping == false {
                 sendMessageBtn.isEnabled = true
-                
                 // MARK: Emit socket when user start type
                 SocketService.instance.socket.emit(Constants.SocketsEvents.StartType, UserDataService.instance.name, channelId)
             }
@@ -189,6 +193,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if success {
                     self.messageTxtBox.text = ""
                     SocketService.instance.socket.emit(Constants.SocketsEvents.StopType, UserDataService.instance.name, channelId)
+                    self.isTyping = false
                 }
             }
         }

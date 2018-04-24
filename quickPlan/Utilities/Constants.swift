@@ -29,6 +29,7 @@ struct Constants {
     
     // MARK: Sockets Events
     struct SocketsEvents{
+        static let NewMessage = "newMessage"
         static let NewChannel = "newChannel"
         static let ChannelCreated = "channelCreated"
         static let MessageCreated = "messageCreated"
