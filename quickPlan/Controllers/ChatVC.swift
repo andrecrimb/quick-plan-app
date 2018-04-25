@@ -134,12 +134,13 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         getMessages()
     }
     
+    // MARK: MessageBox
     @IBAction func messageBoxEditing(_ sender: Any) {
         guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         if messageTxtBox.text == "" {
             isTyping = false
             sendMessageBtn.isEnabled = false
-            
+    
             // MARK: Emit socket when user stop type
             SocketService.instance.socket.emit(Constants.SocketsEvents.StopType, UserDataService.instance.name, channelId)
         } else {
@@ -192,6 +193,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
                 if success {
                     self.messageTxtBox.text = ""
+                    self.sendMessageBtn.isEnabled = false
                     SocketService.instance.socket.emit(Constants.SocketsEvents.StopType, UserDataService.instance.name, channelId)
                     self.isTyping = false
                 }

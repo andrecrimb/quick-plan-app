@@ -55,7 +55,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        unsubscribeFromNotificationCenter()
+//        unsubscribeFromNotificationCenter()
     }
     
     func subscribeToNotificationCenter() {
