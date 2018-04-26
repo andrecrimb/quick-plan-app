@@ -1,4 +1,5 @@
 
+
 # QuickPlan  
   
 The QuickPlan is result of **Networking APIs, REST** lesson of **Udemy iOS Developer** course.  
@@ -7,7 +8,7 @@ QuickPlan is a chat app, that enables users create channels and send messages th
 
 When the user opens the app is required to create an account, using an e-mail, password, choosing an avatar and avatar color for it.  
 
-
+![App Screenshots](https://raw.githubusercontent.com/andrerosa189/quickPlan/master/Resources/screenshot.png)
   
 #### Technologies and best practices used in this project are listed below.  
   
