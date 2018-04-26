@@ -34,3 +34,13 @@ When the user opens the app is required to create an account, using an e-mail, p
 
 
 All the layout ideas that I created for this project are available on this repository.  
+
+
+## Requirements
+
+ - Xcode 9.3
+ - Swift 4.0
+
+## License
+
+Copyright (c) 2018 André Rosa
