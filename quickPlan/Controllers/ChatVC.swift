@@ -20,6 +20,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var textFieldDelegate = TextFieldDelegate()
     var isTyping = false
     var navigateItemTitle: String = ""
+    // MARK: Load empty list view from nib
+    let emptyListPlaceholder: UIView? = Bundle.main.loadNibNamed("EmptyListPlaceholder", owner: nil, options: nil)?.first as? UIView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
+                self.checkEmptyList()
                 if MessageService.instance.messages.count > 0 {
                     self.scrollToTableBottom(animated: true)
                 }
@@ -119,6 +122,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             onLoginGetMessages()
         } else {
             tableView.reloadData()
+            checkEmptyList()
         }
     }
     
@@ -172,10 +176,24 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
             if success{
                 self.tableView.reloadData()
-                self.scrollToTableBottom(animated: false)
+                self.checkEmptyList()
+                if MessageService.instance.messages.count > 0 {
+                    self.scrollToTableBottom(animated: false)
+                }
             }
         }
     }
+    
+    // MARK: Function to check if the table is empty to put the placeholder
+    
+    func checkEmptyList() {
+        if MessageService.instance.messages.count > 0 {
+            self.tableView.backgroundView = nil
+        } else {
+            self.tableView.backgroundView = emptyListPlaceholder
+        }
+    }
+    
     
     // MARK: Set add gesture recognizer to button
     func configMenuBtn(){

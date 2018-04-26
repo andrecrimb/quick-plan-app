@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D9DDAB78B4132CD46B6B8BC /* Pods_quickPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932BB0D13C5AEA4E3105207D /* Pods_quickPlan.framework */; };
+		5416B60E20915EB4005FE463 /* EmptyListPlaceholder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5416B60D20915EB4005FE463 /* EmptyListPlaceholder.xib */; };
 		541786C12078ECB100011004 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C02078ECB100011004 /* AvatarCell.swift */; };
 		541786C3207912BF00011004 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C2207912BF00011004 /* TextFieldDelegate.swift */; };
 		541786C52079140800011004 /* ViewKeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541786C42079140800011004 /* ViewKeyboardHandler.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		072E98F57B2B82E2A46A5F3F /* Pods_quickPlanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quickPlanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5416B60D20915EB4005FE463 /* EmptyListPlaceholder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListPlaceholder.xib; sourceTree = "<group>"; };
 		541786C02078ECB100011004 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		541786C2207912BF00011004 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		541786C42079140800011004 /* ViewKeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewKeyboardHandler.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				54F6D41920817F7E0001ED04 /* NavigationTitleView.xib */,
 				5441DE4A207A4571002BC793 /* UserProfileVC.xib */,
 				54F6D414207E69BE0001ED04 /* AddChannelVC.xib */,
+				5416B60D20915EB4005FE463 /* EmptyListPlaceholder.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				543F5F4C2062BBC4000C342E /* Assets.xcassets in Resources */,
 				5441DE4C207A4571002BC793 /* UserProfileVC.xib in Resources */,
 				543F5F4A2062BBC4000C342E /* Main.storyboard in Resources */,
+				5416B60E20915EB4005FE463 /* EmptyListPlaceholder.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
